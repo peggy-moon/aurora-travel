@@ -1,0 +1,205 @@
+:root {
+    /* 字級變數 */
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 4rem;
+
+    /* 字重變數 */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* 行高變數 */
+    --lh-tight: 1.2;
+    --lh-snug: 1.35;
+    --lh-normal: 1.5;
+    --lh-loose: 1.75;
+
+    /* 字距變數 */
+    --ls-tightest: -0.04em;
+    --ls-tight: -0.02em;
+    --ls-normal: 0;
+    --ls-wide: 0.05em;
+    --ls-wider: 0.1em;
+    --ls-widest: 0.2em;
+
+    /* 字體變數 */
+    --font-sans: "Noto Sans TC", "PingFang TC", sans-serif;
+    --font-display: "Cormorant Garamond", serif;
+
+    /* 文字顏色變數 */
+    /* 主要文字 */
+    --text-primary: #F4F8FC;
+
+    /* 次要文字 */
+    --text-secondary: #A9B7C8;
+
+    /* 輔助說明 */
+    --text-muted: #7F91A6;
+
+    /* 亮底用 */
+    --text-inverse: #07111F;
+
+    /* 柔和白字 */
+    --text-white-soft: rgba(255, 255, 255, 0.85);
+
+    /* 更淡白字 */
+    --text-white-muted: rgba(255, 255, 255, 0.7);
+
+
+    /* 間距數值,1rem=16px */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+
+    /* 圓角變數 */
+    --radius-none: 0px;
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-pill: 9999px;
+
+    /* 毛玻璃效果 */
+    /* 背景上不透明程度 */
+    --glass-bg: rgba(11, 29, 51, 0.55);
+
+    /* 玻璃元件邊緣反光程度 */
+    --glass-border: rgba(255, 255, 255, 0.12);
+
+    /* 玻璃模糊程度 */
+    --glass-blur-sm: 4px;
+    --glass-blur-md: 10px;
+    --glass-blur-lg: 20px;
+
+
+    /* 控件高度變數、按鈕、輸入框等等 */
+    --control-h-sm: 36px;
+    --control-h-md: 44px;
+    --control-h-lg: 52px;
+
+    /* 邊框寬度變數 */
+    --border-w: 1px;
+
+    /* 陰影變數 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.18);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.28);
+
+    /* 品牌光暈 */
+    --glow-primary: 0 0 30px rgba(89, 225, 194, 0.25);
+    --glow-secondary: 0 0 30px rgba(155, 140, 255, 0.25);
+
+
+    /* 網站顏色系統(根據每個網站不同可修改) */
+    /* 主要顏色、按鈕色、標題文字色 */
+    /* 極光青綠 */
+    --color-primary: #59E1C2;
+    --color-primary-hover: #72E8CF;
+    --color-primary-active: #3BC5A7;
+
+    /* 極光紫 */
+    --color-secondary: #9B8CFF;
+    --color-secondary-hover: #ADA1FF;
+    --color-secondary-active: #806FE8;
+
+    /* 冰霧藍 */
+    --color-tertiary: #72D6E8;
+    --color-tertiary-hover: #8ADFED;
+    --color-tertiary-active: #54BFD3;
+
+
+    /* tag 淡底顏色 */
+    --color-primary-soft: rgba(89, 225, 194, 0.14);
+    --color-secondary-soft: rgba(155, 140, 255, 0.14);
+    --color-tertiary-soft: rgba(114, 214, 232, 0.14);
+
+    /* 背景色 */
+    --color-bg: #07111F;
+    --color-bg-secondary: #0B1D33;
+    --color-bg-tertiary: #102A46;
+
+    /* 邊框顏色 */
+    --color-border: rgba(255, 255, 255, 0.12);
+
+    /* 品牌漸層 */
+    --gradient-brand: linear-gradient(135deg,
+            #59E1C2 0%,
+            #72D6E8 45%,
+            #9B8CFF 100%);
+
+    /* 背景漸層 */
+    --gradient-bg: linear-gradient(180deg,
+            #07111F 0%,
+            #0B1D33 100%);
+
+    /* 焦點環寬度變數:點到的時候會有的框 */
+    --focus-ring: 3px;
+
+    /* 全站 focus-visible 顏色(通常用在按Tab鍵出現的框顏色) */
+    --color-focus: rgba(89, 225, 194, 0.4);
+
+    /* 小亮點顏色 */
+    --color-accent: #9B8CFF;
+    --color-accent-secondary: #59E1C2;
+
+    /* 其他顏色 */
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-success: #10b981;
+
+    /* 表單提示字顏色 */
+    --color-placeholder: #718399;
+
+    /* 表單 disabled 背景色 */
+    --color-disabled-bg: #13263D;
+
+
+
+    --white: #ffffff;
+    --black: #000000;
+
+    /* container內距 */
+    --container-padding: var(--space-4);
+    /* 手機 */
+}
+
+@media (min-width: 768px) {
+    :root {
+        --container-padding: var(--space-6);
+        /* 平板 */
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --container-padding: var(--space-8);
+        /* 桌機 */
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --container-padding: var(--space-10);
+        /* 大桌機 */
+    }
+}

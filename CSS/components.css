@@ -1,0 +1,467 @@
+.btn {
+    min-height: var(--control-h-md);
+    padding: var(--space-3) var(--space-8);
+    border-radius: var(--radius-pill);
+
+    border: var(--border-w) solid transparent;
+    color: var(--text-inverse);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    font: inherit;
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    user-select: none;
+
+    transition: transform .15s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* focus（鍵盤友善） */
+.btn:focus-visible {
+    outline: var(--focus-ring) solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+/* 第一種按鈕顏色 */
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    box-shadow: var(--glow-primary);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+}
+
+.btn-primary:active {
+    background: var(--color-primary-active);
+}
+
+/* 第二種按鈕顏色 */
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--text-inverse);
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-hover);
+}
+
+.btn-secondary:active {
+    background: var(--color-secondary-active);
+}
+
+/* 第三種按鈕顏色 */
+
+.btn-tertiary {
+    background: var(--color-tertiary);
+    color: var(--text-inverse);
+}
+
+.btn-tertiary:hover {
+    background: var(--color-tertiary-hover);
+}
+
+.btn-tertiary:active {
+    background: var(--color-tertiary-active);
+}
+
+/* 可以選擇不同尺寸的按鈕:更小、更大 */
+.btn--sm {
+    min-height: var(--control-h-sm);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-pill);
+}
+
+.btn--lg {
+    min-height: var(--control-h-lg);
+    padding: var(--space-6) var(--space-8);
+    border-radius: var(--radius-pill);
+}
+
+/* Tag / Badge（狀態標籤） */
+.tag {
+    display: inline-flex;
+    padding: var(--space-2) var(--space-4);
+    min-height: 24px;
+
+    font-size: var(--text-sm);
+    font-weight: var(--fw-medium);
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-bg-secondary);
+    color: var(--text-primary);
+}
+
+/* 淡底 */
+.tag--primary--soft {
+    background: var(--color-primary-soft);
+}
+
+.tag--secondary--soft {
+    background: var(--color-secondary-soft);
+}
+
+.tag--tertiary--soft {
+    background: var(--color-tertiary-soft);
+}
+
+/* 實心底色 */
+.tag--primary-solid {
+    background: var(--color-primary);
+}
+
+.tag--secondary-solid {
+    background: var(--color-secondary);
+}
+
+.tag--tertiary-solid {
+    background: var(--color-tertiary);
+}
+
+/* 透明底+外框 */
+.tag--primary--outline {
+    border: 1px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.tag--secondary--outline {
+    border: 1px solid var(--color-secondary);
+    background: transparent;
+    color: var(--color-secondary);
+}
+
+.tag--tertiary--outline {
+    border: 1px solid var(--color-tertiary);
+    background: transparent;
+    color: var(--color-tertiary);
+}
+
+/* 白底 */
+.tag--white {
+    background: var(--white);
+}
+
+/* 深色底 */
+.tag--dark {
+    background: var(--black);
+}
+
+/* 警告色-紅 */
+.tag--danger {
+    background: var(--color-danger);
+    color: var(--white);
+}
+
+/* 警告色-黃 */
+.tag--warning {
+    background: var(--color-warning);
+    color: var(--white);
+}
+
+/* 成功色-綠 */
+.tag--success {
+    background: var(--color-success);
+    color: var(--white);
+}
+
+/* 亮點色-紫 */
+.tag--accent {
+    background: var(--color-accent);
+    color: var(--white);
+}
+
+/* tag文字顏色 */
+.tag--text-primary {
+    color: var(--color-primary);
+}
+
+.tag--text-secondary {
+    color: var(--color-secondary);
+}
+
+.tag--text-tertiary {
+    color: var(--color-tertiary);
+}
+
+.tag--text-white {
+    color: var(--text-inverse);
+}
+
+.tag--text-black {
+    color: var(--text-primary);
+}
+
+/* 毛玻璃區塊 */
+.glass-overlay {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+}
+
+/* 毛玻璃元件 */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+
+    border: var(--border-w) solid var(--glass-border);
+    box-shadow: var(--shadow-md);
+}
+
+/* 卡片 */
+.card {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
+}
+
+.card--hover {
+    transition: transform .15s ease, border-color .2s ease, box-shadow .15s ease;
+}
+
+.card--hover:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+}
+
+/* 卡片內常用區塊 */
+.card__title {
+    margin: 0 0 var(--space-2);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* 說明文字 */
+.card__desc {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* 可以選擇不同圓角弧度的卡片:更小、更大 */
+.card--compact {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+}
+
+.card--spacious {
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+}
+
+
+/* 表單 */
+/* 表單開啟grid排列 */
+.field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    padding: 0 var(--space-3);
+    min-height: var(--control-h-md);
+}
+
+.textarea {
+    height: auto;
+    padding: var(--space-3);
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* 輸入欄位的提示文字顏色 */
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--color-placeholder);
+}
+
+/* 按鈕、輸入欄位focus-visible顏色(用鍵盤Tab鍵才出現) */
+.input:focus-visible,
+.select:focus-visible,
+.textarea:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 var(--focus-ring) var(--color-focus);
+}
+
+.input:disabled,
+.select:disabled,
+.textarea:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    background: var(--color-disabled-bg);
+}
+
+
+/* error 狀態：把 class 掛在 field 上 ,搭配js使用*/
+.field.is-error .input,
+.field.is-error .select,
+.field.is-error .textarea {
+    border-color: var(--color-danger);
+    box-shadow: none;
+}
+
+.field__error {
+    margin: 0;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+/* 輸入框需要跟按鈕同一排的時候用 */
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+/* CTA */
+.cta-card {
+    padding:
+        var(--space-20) var(--space-10);
+
+    border-radius: 40px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(89, 225, 194, 0.18),
+            transparent 35%),
+        radial-gradient(circle at bottom right,
+            rgba(155, 140, 255, 0.16),
+            transparent 35%),
+        var(--color-bg-secondary);
+
+    border: var(--border-w) solid var(--color-border);
+    box-shadow: var(--shadow-md);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.cta-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.cta-card__title {
+    margin-bottom: var(--space-6);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--color-primary);
+    line-height: var(--lh-tight);
+}
+
+.cta-card__desc {
+    max-width: 700px;
+
+    margin-inline: auto;
+    margin-bottom: var(--space-10);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-lg);
+    line-height: var(--lh-loose);
+}
+
+/* 分類按鈕 */
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-8);
+}
+
+.filter-tab {
+    min-height: 52px;
+
+    padding:
+        var(--space-3) var(--space-6);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-pill);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    background: var(--color-bg-secondary);
+    color: var(--text-secondary);
+
+    font-weight: var(--fw-semibold);
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.filter-tab:hover {
+    transform: translateY(-3px);
+
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+
+    box-shadow: var(--glow-primary);
+}
+
+.filter-tab.is-active {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}

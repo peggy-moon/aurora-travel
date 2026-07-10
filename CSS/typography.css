@@ -1,0 +1,229 @@
+/* 字級樣式 */
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-base {
+    font-size: var(--text-base);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+.text-2xl {
+    font-size: var(--text-2xl);
+}
+
+.text-3xl {
+    font-size: var(--text-3xl);
+}
+
+.text-4xl {
+    font-size: var(--text-4xl);
+}
+
+.text-5xl {
+    font-size: var(--text-5xl);
+}
+
+.text-6xl {
+    font-size: var(--text-6xl);
+}
+
+/* 字重樣式 */
+.fw-light {
+    font-weight: var(--fw-light);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
+
+.fw-semibold {
+    font-weight: var(--fw-semibold);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+/* 行高樣式 */
+.lh-tight {
+    line-height: var(--lh-tight);
+}
+
+.lh-snug {
+    line-height: var(--lh-snug);
+}
+
+.lh-normal {
+    line-height: var(--lh-normal);
+}
+
+.lh-loose {
+    line-height: var(--lh-loose);
+}
+
+/* 字距樣式 */
+.ls-tightest {
+    letter-spacing: var(--ls-tightest);
+}
+
+.ls-tight {
+    letter-spacing: var(--ls-tight);
+}
+
+.ls-normal {
+    letter-spacing: var(--ls-normal);
+}
+
+.ls-wide {
+    letter-spacing: var(--ls-wide);
+}
+
+.ls-wider {
+    letter-spacing: var(--ls-wider);
+}
+
+.ls-widest {
+    letter-spacing: var(--ls-widest);
+}
+
+/* 字體樣式 */
+.font-sans {
+    font-family: var(--font-sans);
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+/* 文字顏色樣式 */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-inverse {
+    color: var(--text-inverse);
+}
+
+/* 標題文字顏色 */
+.text-brand-primary {
+    color: var(--color-primary);
+}
+
+.text-brand-secondary {
+    color: var(--color-secondary);
+}
+
+.text-brand-tertiary {
+    color: var(--color-tertiary);
+}
+
+/* 文字對齊樣式 */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* 文字大小寫樣式 */
+.tt-none {
+    text-transform: none;
+}
+
+.tt-upper {
+    text-transform: uppercase;
+}
+
+.tt-cap {
+    text-transform: capitalize;
+}
+
+/* 文字裝飾樣式 */
+.td-none {
+    text-decoration: none;
+}
+
+.td-underline {
+    text-decoration: underline;
+}
+
+/* 文字基底：大多數段落/標題都適用 */
+.text {
+    font-family: var(--font-sans);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-normal);
+    color: var(--text-secondary);
+}
+
+/* 標題基底 */
+.heading {
+    font-family: var(--font-sans);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--text-primary);
+}
+
+/* 漸層文字 */
+.text-gradient {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 英文展示標題：適合 Hero、區塊英文標題 */
+.display {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+/* 漸層展示標題 */
+.display-gradient {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    line-height: 0.95;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 細字中文：適合 Hero 副標、描述文字 */
+.text-light-spaced {
+    font-family: var(--font-sans);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-loose);
+    letter-spacing: var(--ls-wider);
+    color: var(--text-secondary);
+}

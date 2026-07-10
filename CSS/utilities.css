@@ -1,0 +1,133 @@
+/* 通用工具類樣式 */
+
+/* 內間距樣式 */
+.p-4 {
+    padding: var(--space-4);
+}
+
+.p-6 {
+    padding: var(--space-6);
+}
+
+.p-8 {
+    padding: var(--space-8);
+}
+
+.py-4 {
+    padding-block: var(--space-4);
+}
+
+.py-6 {
+    padding-block: var(--space-6);
+}
+
+.py-8 {
+    padding-block: var(--space-8);
+}
+
+.px-4 {
+    padding-inline: var(--space-4);
+}
+
+.px-6 {
+    padding-inline: var(--space-6);
+}
+
+.px-8 {
+    padding-inline: var(--space-8);
+}
+
+/* 外間距樣式 */
+.mt-2 {
+    margin-top: var(--space-2);
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mt-6 {
+    margin-top: var(--space-6);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-2);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+    margin-bottom: var(--space-6);
+}
+
+/* 間距樣式 */
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-3 {
+    gap: var(--space-3);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-6 {
+    gap: var(--space-6);
+}
+
+.gap-8 {
+    gap: var(--space-8);
+}
+
+/* 圓角樣式 */
+.rounded-none {
+    border-radius: var(--radius-none);
+}
+
+.rounded-xs {
+    border-radius: var(--radius-xs);
+}
+
+.rounded-sm {
+    border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+    border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+.rounded-pill {
+    border-radius: var(--radius-pill);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.d-block { 
+    display: block; 
+}
+
+.hidden { 
+    display: none; 
+}
+
+.mx-auto { 
+    margin-inline: auto; 
+}
