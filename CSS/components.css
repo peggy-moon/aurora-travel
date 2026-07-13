@@ -278,6 +278,82 @@
     border-radius: var(--radius-xl);
 }
 
+/* Feature Card 特色資訊卡 */
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    padding: var(--space-4);
+
+    border: var(--border-w) solid transparent;
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+/* 圖示區 */
+.feature-card__icon {
+    flex: 0 0 auto;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border: var(--border-w) solid var(--glass-border);
+    border-radius: 50%;
+
+    background: var(--glass-bg);
+    color: var(--color-primary);
+
+    font-size: var(--text-xl);
+
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+
+    box-shadow: var(--shadow-sm);
+}
+
+/* 文字區 */
+.feature-card__content {
+    min-width: 0;
+}
+
+/* 標題 */
+.feature-card__title {
+    margin-bottom: var(--space-1);
+
+    color: var(--text-primary);
+
+    font-size: var(--text-base);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+}
+
+/* 說明文字 */
+.feature-card__desc {
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+    line-height: var(--lh-normal);
+}
+
+/* Hover 狀態 */
+.feature-card:hover {
+    transform: translateY(-3px);
+
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+
+    box-shadow: var(--glow-primary);
+}
+
 
 /* 表單 */
 /* 表單開啟grid排列 */
