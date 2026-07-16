@@ -35,7 +35,7 @@
     --font-sans: "Noto Sans TC", "PingFang TC", sans-serif;
 
     /* 中文展示字(標題部分) */
-    --font-heading:"Zen Old Mincho", serif;
+    --font-heading:"Zen Old Mincho", "Noto Serif TC", serif;
 
     /* 英文展示字(標題部分) */
     --font-display: "Marcellus", serif;

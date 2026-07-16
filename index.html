@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Marcellus、日本明朝體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Marcellus、日本明朝體、思源宋體 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
@@ -26,6 +28,20 @@
     <link href="CSS/home.css" rel="stylesheet">
     <link href="CSS/style.css" rel="stylesheet">
 
+    <!-- destination資料 -->
+    <script src="JS/destination-data.js" defer></script>
+
+    <!-- destination -->
+    <script src="JS/destination.js" defer></script>
+
+    <!-- 數字動畫 -->
+    <script src="JS/stats-counter.js" defer></script>
+
+    <!-- 旅客評價區資料 -->
+    <script src="JS/testimonials-data.js" defer></script>
+
+    <!-- 旅客評價區 -->
+    <script src="JS/testimonials.js" defer></script>
 
 
     <!-- 有這句在電腦上預覽手機版網頁才能正常顯示 -->
@@ -42,7 +58,6 @@
                 <span>AURORA&nbsp;SEASON&nbsp;2026</span>
                 <span class="mobile-break">極光季預售中</span>
             </p>
-            
             <h1 class="hero__title">
                 追一場&nbsp;<span>極夜</span>
                 <br>裡的綠色風暴
@@ -122,4 +137,569 @@
         </div>
     </section>
 
+    <!-- Destinations -->
+    <section class="destinations section-lg" id="destinations">
+        <div class="container">
+
+            <!-- 區塊標題 -->
+            <header class="destinations__header">
+                <div class="destinations__heading">
+                    <p class="destinations__eyebrow">
+                        EXPLORE THE NORTH
+                    </p>
+
+                    <h2 class="destinations__title">
+                        四座<span>北歐國度</span><br>
+                        一次極光的旅程
+                    </h2>
+                </div>
+
+                <p class="destinations__intro">
+                    從冰島的火山與冰川，到芬蘭寧靜的雪林。
+                    每一座北歐國度，都有屬於自己的極光故事。
+                </p>
+            </header>
+
+            <!-- 國家切換 -->
+            <div class="filter-tabs destinations__tabs" role="tablist" aria-label="極光旅行目的地">
+
+                <button class="filter-tab is-active" type="button" role="tab" aria-selected="true"
+                    data-destination="iceland">
+
+                    <span class="filter-tab__zh">冰島</span>
+                    <span class="filter-tab__en">Iceland</span>
+                </button>
+
+                <button class="filter-tab" type="button" role="tab" aria-selected="false" data-destination="finland">
+
+                    <span class="filter-tab__zh">芬蘭</span>
+                    <span class="filter-tab__en">Finland</span>
+                </button>
+
+                <button class="filter-tab" type="button" role="tab" aria-selected="false" data-destination="norway">
+
+                    <span class="filter-tab__zh">挪威</span>
+                    <span class="filter-tab__en">Norway</span>
+                </button>
+
+                <button class="filter-tab" type="button" role="tab" aria-selected="false" data-destination="sweden">
+
+                    <span class="filter-tab__zh">瑞典</span>
+                    <span class="filter-tab__en">Sweden</span>
+                </button>
+
+            </div>
+            <div class="destinations__content">
+
+                <!-- 精選目的地大卡 -->
+                <article class="destination-featured">
+                    <img class="destination-featured__image" data-role="destination-image"
+                        src="images/destinations/iceland.jpg" alt="冰島夜空中的綠色極光">
+                    <div class="destination-featured__overlay"></div>
+                    <div class="destination-featured__content">
+                        <p class="destination-featured__eyebrow">
+                            FEATURED DESTINATION
+                        </p>
+                        <h3 class="destination-featured__title" data-role="destination-name">
+                            <span class="destination-featured__name" data-role="destination-name">
+                                冰島
+                            </span>
+                            <span class="destination-featured__english" data-role="destination-english">Iceland</span>
+                        </h3>
+                        <p class="destination-featured__subtitle" data-role="destination-tagline">
+                            火與冰的極光國度
+                        </p>
+                        <p class="destination-featured__desc" data-role="destination-description">
+                            在雷克雅維克郊野的黑色沙灘與冰川湖畔，
+                            等待舞動的綠色極光劃過夜空。
+                        </p>
+                        <div class="destination-featured__footer">
+                            <div class="destination-featured__meta">
+                                <div>
+                                    <span class="destination-featured__label">
+                                        起價
+                                    </span>
+                                    <strong class="destination-featured__value" data-role="destination-price">
+                                        NT$ 128,000
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span class="destination-featured__label">
+                                        行程數
+                                    </span>
+                                    <strong class="destination-featured__value" data-role="destination-tours">
+                                        12 條
+                                    </strong>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary destination-featured__btn"
+                                data-role="destination-button">
+                                <span data-role="destination-button-text">
+                                    瀏覽冰島行程
+                                </span>
+                                <i class="ti ti-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 右側目的地清單 -->
+                <div class="destinations__list">
+
+                    <!-- 冰島 -->
+                    <button class="destination-item is-active" type="button" data-destination="iceland"
+                        aria-pressed="true">
+                        <img class="destination-item__image" src="images/destinations/iceland-thumb.jpg" alt="">
+
+                        <span class="destination-item__content">
+                            <span class="destination-item__name">
+                                冰島
+                                <span>Iceland</span>
+                            </span>
+
+                            <span class="destination-item__tagline">
+                                火與冰的極光國度
+                            </span>
+
+                            <span class="destination-item__meta">
+                                <span>
+                                    <i class="ti ti-route"></i>
+                                    12 條行程
+                                </span>
+
+                                <span>
+                                    <i class="ti ti-ticket"></i>
+                                    NT$ 128,000 起
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="destination-item__arrow" aria-hidden="true">
+                            <i class="ti ti-arrow-up-right"></i>
+                        </span>
+                    </button>
+
+                    <!-- 芬蘭 -->
+                    <button class="destination-item" type="button" data-destination="finland" aria-pressed="false">
+                        <img class="destination-item__image" src="images/destinations/finland-thumb.jpg" alt="">
+
+                        <span class="destination-item__content">
+                            <span class="destination-item__name">
+                                芬蘭
+                                <span>Finland</span>
+                            </span>
+
+                            <span class="destination-item__tagline">
+                                玻璃屋下的極光夜
+                            </span>
+
+                            <span class="destination-item__meta">
+                                <span>
+                                    <i class="ti ti-route"></i>
+                                    9 條行程
+                                </span>
+
+                                <span>
+                                    <i class="ti ti-ticket"></i>
+                                    NT$ 145,000 起
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="destination-item__arrow" aria-hidden="true">
+                            <i class="ti ti-arrow-up-right"></i>
+                        </span>
+                    </button>
+
+                    <!-- 挪威 -->
+                    <button class="destination-item" type="button" data-destination="norway" aria-pressed="false">
+                        <img class="destination-item__image" src="images/destinations/norway-thumb.jpg" alt="">
+
+                        <span class="destination-item__content">
+                            <span class="destination-item__name">
+                                挪威
+                                <span>Norway</span>
+                            </span>
+
+                            <span class="destination-item__tagline">
+                                峽灣間的綠色簾幕
+                            </span>
+
+                            <span class="destination-item__meta">
+                                <span>
+                                    <i class="ti ti-route"></i>
+                                    10 條行程
+                                </span>
+
+                                <span>
+                                    <i class="ti ti-ticket"></i>
+                                    NT$ 152,000 起
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="destination-item__arrow" aria-hidden="true">
+                            <i class="ti ti-arrow-up-right"></i>
+                        </span>
+                    </button>
+
+                    <!-- 瑞典 -->
+                    <button class="destination-item" type="button" data-destination="sweden" aria-pressed="false">
+                        <img class="destination-item__image" src="images/destinations/sweden-thumb.jpg" alt="">
+
+                        <span class="destination-item__content">
+                            <span class="destination-item__name">
+                                瑞典
+                                <span>Sweden</span>
+                            </span>
+
+                            <span class="destination-item__tagline">
+                                拉普蘭的極光心臟
+                            </span>
+
+                            <span class="destination-item__meta">
+                                <span>
+                                    <i class="ti ti-route"></i>
+                                    8 條行程
+                                </span>
+
+                                <span>
+                                    <i class="ti ti-ticket"></i>
+                                    NT$ 138,000 起
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="destination-item__arrow" aria-hidden="true">
+                            <i class="ti ti-arrow-up-right"></i>
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Aurora -->
+    <section class="why-aurora section-lg" id="about">
+        <div class="container">
+            <header class="why-aurora__header">
+                <p class="why-aurora__eyebrow">
+                    WHY AURORA
+                </p>
+                <h2 class="why-aurora__title">
+                    為什麼旅客願意<br>
+                    <span>把極光交給我們</span>
+                </h2>
+                <p class="why-aurora__intro">
+                    12 年極地旅遊經驗、跨國在地夥伴網絡，以及對極光的著迷。
+                    我們用這三件事，把每一趟旅程做到極致。
+                </p>
+            </header>
+            <div class="why-aurora__stats why-aurora__features grid grid-4">
+                <article class="stat-item">
+                    <strong class="stat-item__value" data-count="12" data-suffix="+">
+                        0
+                    </strong>
+                    <span class="stat-item__label">
+                        北歐極光目的地
+                    </span>
+                </article>
+                <article class="stat-item">
+                    <strong class="stat-item__value" data-count="8600" data-separator="true">
+                        0
+                    </strong>
+                    <span class="stat-item__label">
+                        累計出行旅客
+                    </span>
+                </article>
+                <article class="stat-item">
+                    <strong class="stat-item__value" data-count="97" data-suffix="%">
+                        0
+                    </strong>
+                    <span class="stat-item__label">
+                        看見極光機率
+                    </span>
+                </article>
+                <article class="stat-item">
+                    <strong class="stat-item__value" data-count="4.9" data-decimals="1">
+                        0
+                    </strong>
+                    <span class="stat-item__label">
+                        旅客平均評分
+                    </span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours -->
+    <section class="featured-tours section-lg" id="featured-tours">
+        <div class="container">
+            <header class="featured-tours__header">
+                <div>
+                    <p class="featured-tours__eyebrow">
+                        FEATURED TOURS
+                    </p>
+                    <h2 class="featured-tours__title">
+                        嚴選 <span>精華行程</span>
+                    </h2>
+                </div>
+                <a href="tours.html" class="featured-tours__link">
+                    查看全部行程
+                    <i class="ti ti-arrow-right"></i>
+                </a>
+            </header>
+            <div class="featured-tours__grid">
+                <!-- 冰島 -->
+                <article class="card card--media card--hover tour-card">
+                    <div class="card__media tour-card__media">
+                        <img class="card__image" src="images/tours/iceland-tour.jpg" alt="冰島間歇泉與綠色極光">
+                        <span class="tag tag--white tour-card__location">
+                            <i class="ti ti-map-pin"></i>
+                            冰島
+                        </span>
+                        <span class="tour-card__rating">
+                            <i class="ti ti-star-filled"></i>
+                            4.9
+                        </span>
+                    </div>
+                    <div class="card__body tour-card__body">
+                        <h3 class="card__title tour-card__title">
+                            冰島黃金圈・極光追蹤 8 日
+                        </h3>
+                        <div class="tour-card__tags">
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                黃金圈景觀
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                藍湖溫泉
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                極光追蹤
+                            </span>
+                        </div>
+                        <div class="card__footer">
+                            <div>
+                                <p class="tour-card__meta">
+                                    8 天 7 夜・12 月出發
+                                </p>
+                                <p class="tour-card__price">
+                                    NT$158,000
+                                </p>
+                            </div>
+                            <a href="#" class="tour-card__arrow" aria-label="查看冰島黃金圈極光追蹤行程">
+                                <i class="ti ti-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 芬蘭 -->
+                <article class="card card--media card--hover tour-card">
+                    <div class="card__media tour-card__media">
+                        <img class="card__image" src="images/tours/finland-tour.jpg" alt="芬蘭雪林中的木屋與馴鹿">
+                        <span class="tag tag--white tour-card__location">
+                            <i class="ti ti-map-pin"></i>
+                            芬蘭
+                        </span>
+                        <span class="tour-card__rating">
+                            <i class="ti ti-star-filled"></i>
+                            4.95
+                        </span>
+                    </div>
+                    <div class="card__body tour-card__body">
+                        <h3 class="card__title tour-card__title">
+                            芬蘭拉普蘭・玻璃屋極光 7 日
+                        </h3>
+                        <div class="tour-card__tags">
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                玻璃圓頂屋
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                馴鹿雪橇
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                聖誕老人村
+                            </span>
+                        </div>
+                        <div class="card__footer">
+                            <div>
+                                <p class="tour-card__meta">
+                                    7 天 6 夜・9 月出發
+                                </p>
+                                <p class="tour-card__price">
+                                    NT$172,000
+                                </p>
+                            </div>
+                            <a href="#" class="tour-card__arrow" aria-label="查看芬蘭拉普蘭玻璃屋極光行程">
+                                <i class="ti ti-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 挪威 -->
+                <article class="card card--media card--hover tour-card">
+                    <div class="card__media tour-card__media">
+                        <img class="card__image" src="images/tours/norway-tour.jpg" alt="挪威峽灣與雪山景色">
+                        <span class="tag tag--white tour-card__location">
+                            <i class="ti ti-map-pin"></i>
+                            挪威
+                        </span>
+                        <span class="tour-card__rating">
+                            <i class="ti ti-star-filled"></i>
+                            4.92
+                        </span>
+                    </div>
+                    <div class="card__body tour-card__body">
+                        <h3 class="card__title tour-card__title">
+                            挪威特羅姆瑟・峽灣極光 9 日
+                        </h3>
+                        <div class="tour-card__tags">
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                峽灣郵輪
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                海上追光
+                            </span>
+                            <span class="tag tag--primary--soft tag--text-primary">
+                                薩米文化村
+                            </span>
+                        </div>
+                        <div class="card__footer">
+                            <div>
+                                <p class="tour-card__meta">
+                                    9 天 8 夜・10 月出發
+                                </p>
+                                <p class="tour-card__price">
+                                    NT$189,000
+                                </p>
+                            </div>
+                            <a href="#" class="tour-card__arrow" aria-label="查看挪威特羅姆瑟峽灣極光行程">
+                                <i class="ti ti-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traveller Stories -->
+    <section class="traveller-stories section-lg">
+        <div class="container traveller-stories__container">
+            <header class="traveller-stories__header">
+                <p class="traveller-stories__eyebrow">
+                    TRAVELLER STORIES
+                </p>
+                <h2 class="traveller-stories__title">
+                    「值得票價」<br>
+                    <span>是他們最常說的話</span>
+                </h2>
+            </header>
+            <div class="testimonial" aria-live="polite">
+                <div class="testimonial__rating">
+                    <i class="ti ti-star-filled"></i>
+                    <strong data-role="testimonial-rating">
+                        5.0
+                    </strong>
+                    <span>/ 5.0</span>
+                </div>
+                <blockquote class="testimonial__quote" data-role="testimonial-quote">
+                    「第一次親眼看到極光那晚，我在冰島的黑沙灘上完全說不出話。
+                    Aurora Travel 幫我安排的節奏很棒，從行程到住宿都有巧思。」
+                </blockquote>
+                <div class="testimonial__author">
+                    <img class="testimonial__avatar" data-role="testimonial-avatar"
+                        src="images/travelers-Emily-Chen.jpg" alt="Emily Chen">
+                    <div>
+                        <p class="testimonial__name" data-role="testimonial-name">
+                            Emily Chen
+                        </p>
+                        <p class="testimonial__meta" data-role="testimonial-meta">
+                            來自台北・設計師
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="icon-btn testimonial-controls__prev" type="button" aria-label="上一則旅客故事">
+                    <i class="ti ti-arrow-left"></i>
+                </button>
+                <div class="testimonial-controls__dots" role="tablist" aria-label="選擇旅客故事">
+                    <button class="testimonial-dot is-active" type="button" aria-label="第 1 則旅客故事" aria-selected="true"
+                        data-index="0"></button>
+                    <button class="testimonial-dot" type="button" aria-label="第 2 則旅客故事" aria-selected="false"
+                        data-index="1"></button>
+                    <button class="testimonial-dot" type="button" aria-label="第 3 則旅客故事" aria-selected="false"
+                        data-index="2"></button>
+                </div>
+                <button class="icon-btn icon-btn--primary testimonial-controls__next" type="button"
+                    aria-label="下一則旅客故事">
+                    <i class="ti ti-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Consultation CTA -->
+    <section class="travel-consultation section-lg">
+        <div class="container">
+            <article class="card card--media travel-consultation__card">
+                <!-- 左側圖片 -->
+                <div class="travel-consultation__media">
+                    <img class="travel-consultation__image" src="images/aurora-cabin.jpg" alt="極光下的北歐木屋">
+                    <div class="travel-consultation__image-overlay"></div>
+                    <p class="travel-consultation__season">
+                        WINTER 2026 · READY TO BOOK
+                    </p>
+                    <h2 class="travel-consultation__image-title">
+                        極光季<br>
+                        即將額滿
+                    </h2>
+                </div>
+
+                <!-- 右側內容 -->
+                <div class="travel-consultation__content">
+                    <p class="travel-consultation__eyebrow">
+                        PLAN YOUR JOURNEY
+                    </p>
+                    <h2 class="travel-consultation__title">
+                        讓我們為你量身<br>
+                        打造一場<span>極光旅程</span>
+                    </h2>
+                    <p class="travel-consultation__desc">
+                        留下你的旅遊偏好，我們的極地旅遊顧問將在
+                        24 小時內聯繫你，提供專屬報價與行程建議。
+                    </p>
+                    <div class="travel-consultation__actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            預約旅遊顧問
+                            <i class="ti ti-arrow-right"></i>
+                        </a>
+                        <a href="contact.html" class="btn travel-consultation__download">
+                            查看所有行程
+                            <i class="ti ti-download"></i>
+                        </a>
+                    </div>
+                    <div class="travel-consultation__stats">
+                        <article class="stat-item">
+                            <strong class="stat-item__value">24H</strong>
+                            <span class="stat-item__label">顧問回覆</span>
+                        </article>
+                        <article class="stat-item">
+                            <strong class="stat-item__value">1v1</strong>
+                            <span class="stat-item__label">專屬規劃</span>
+                        </article>
+                        <article class="stat-item">
+                            <strong class="stat-item__value">100%</strong>
+                            <span class="stat-item__label">彈性客製</span>
+                        </article>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 </body>

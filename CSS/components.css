@@ -252,16 +252,23 @@
     border-color: var(--color-primary);
     box-shadow: var(--glow-primary);
     transform: translateY(-2px);
+
+    border: var(--border-w) solid transparent;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
-/* 卡片內常用區塊 */
+/* 卡片標題 */
 .card__title {
     margin: 0 0 var(--space-2);
     font-weight: 700;
     color: var(--text-primary);
 }
 
-/* 說明文字 */
+/* 卡片說明文字 */
 .card__desc {
     margin: 0;
     color: var(--text-muted);
@@ -276,6 +283,172 @@
 .card--spacious {
     padding: var(--space-6);
     border-radius: var(--radius-xl);
+}
+
+/* 圖片型卡片 */
+.card--media {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 卡片圖片區 */
+.card__media {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 卡片圖片 */
+.card__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+/* 卡片主要內容 */
+.card__body {
+    padding: var(--space-6);
+}
+
+/* 卡片底部 */
+.card__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+
+    margin-top: auto;
+    padding-top: var(--space-5);
+
+    border-top: var(--border-w) solid var(--color-border);
+}
+
+/* 圖片 Hover */
+.card--hover:hover .card__image {
+    transform: scale(1.05);
+}
+
+/* Tour Card 行程卡片 */
+.tour-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 圖片比例 */
+.tour-card__media {
+    aspect-ratio: 4 / 3;
+}
+
+/* 國家標籤 */
+.tour-card__location {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+
+    gap: var(--space-1);
+    color: var(--text-inverse);
+}
+
+/* 評分 */
+.tour-card__rating {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+
+    padding: var(--space-2) var(--space-3);
+
+    border-radius: var(--radius-pill);
+
+    background: rgba(7, 17, 31, 0.78);
+    color: var(--text-primary);
+
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+
+    backdrop-filter: blur(var(--glass-blur-sm));
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+}
+
+.tour-card__rating i {
+    color: var(--color-warning);
+}
+
+/* 讓底部能自動貼齊 */
+.tour-card__body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* 標題的行程專用調整 */
+.tour-card__title {
+    margin-bottom: var(--space-4);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-snug);
+}
+
+/* 行程標籤 */
+.tour-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-6);
+}
+
+/* 日期資訊 */
+.tour-card__meta {
+    margin-bottom: var(--space-1);
+
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+/* 價格 */
+.tour-card__price {
+    color: var(--text-primary);
+
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    line-height: var(--lh-tight);
+}
+
+/* 箭頭 */
+.tour-card__arrow {
+    flex: 0 0 auto;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+    color: var(--text-inverse);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.tour-card__arrow:hover {
+    transform: translateX(4px);
+
+    background: var(--color-primary-hover);
+    box-shadow: var(--glow-primary);
 }
 
 /* Feature Card 特色資訊卡 */
@@ -294,6 +467,49 @@
         background .2s ease,
         border-color .2s ease,
         box-shadow .2s ease;
+}
+
+/* Feature Card 直向版本 */
+.feature-card--vertical {
+    min-height: 260px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: var(--space-6);
+
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+/* 直向卡片圖示改成圓角方形 */
+.feature-card--vertical .feature-card__icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: var(--radius-lg);
+
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* 直向卡片文字 */
+.feature-card--vertical .feature-card__title {
+    margin-bottom: var(--space-3);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-medium);
+}
+
+/* 直向卡片說明 */
+.feature-card--vertical .feature-card__desc {
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
 }
 
 /* 圖示區 */
@@ -354,6 +570,522 @@
     box-shadow: var(--glow-primary);
 }
 
+/* Featured Destination 精選目的地大卡 */
+.destination-featured {
+    position: relative;
+
+    min-height: 520px;
+
+    border: var(--border-w) solid var(--glass-border);
+    border-radius: var(--radius-xl);
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background: var(--color-bg-secondary);
+    box-shadow: var(--shadow-md);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+.destination-featured.is-changing {
+    opacity: 0.35;
+    transform: translateY(8px);
+}
+
+/* 背景圖片 */
+.destination-featured__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+/* 深色遮罩 */
+.destination-featured__overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            rgba(7, 17, 31, 0.08) 15%,
+            rgba(7, 17, 31, 0.35) 48%,
+            rgba(7, 17, 31, 0.95) 100%);
+
+    z-index: 1;
+}
+
+/* 內容 */
+.destination-featured__content {
+    position: relative;
+    z-index: 2;
+
+    min-height: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: var(--space-10);
+}
+
+/* 英文小標 */
+.destination-featured__eyebrow {
+    margin-bottom: var(--space-4);
+
+    color: var(--color-primary);
+
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+}
+
+/* 國家名稱 */
+.destination-featured__title {
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+}
+
+/* 英文國名 */
+.destination-featured__english {
+    margin-left: var(--space-2);
+
+    color: var(--text-white-soft);
+
+    font-family: var(--font-display);
+    font-size: 0.7em;
+    font-weight: var(--fw-regular);
+}
+
+/* 副標 */
+.destination-featured__subtitle {
+    margin-bottom: var(--space-4);
+
+    color: var(--color-tertiary);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    line-height: var(--lh-snug);
+}
+
+/* 介紹文字 */
+.destination-featured__desc {
+    max-width: 620px;
+    margin-bottom: var(--space-8);
+
+    color: var(--text-white-soft);
+
+    font-size: var(--text-base);
+    line-height: var(--lh-loose);
+}
+
+/* 卡片底部資訊 */
+.destination-featured__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-6);
+}
+
+/* 價格與行程數 */
+.destination-featured__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-10);
+}
+
+.destination-featured__label {
+    display: block;
+    margin-bottom: var(--space-1);
+
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+.destination-featured__value {
+    display: block;
+
+    color: var(--text-primary);
+
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--fw-regular);
+}
+
+/* Hover */
+.destination-featured:hover .destination-featured__image {
+    transform: scale(1.04);
+}
+
+/* Destination Item 目的地清單卡片 */
+.destination-item {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+
+    padding: var(--space-4);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg-secondary);
+    color: var(--text-primary);
+
+    text-align: left;
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+/* 縮圖 */
+.destination-item__image {
+    width: 76px;
+    height: 76px;
+
+    border-radius: var(--radius-lg);
+
+    object-fit: cover;
+}
+
+/* 文字區 */
+.destination-item__content {
+    min-width: 0;
+
+    display: grid;
+    gap: var(--space-1);
+}
+
+/* 國家名稱 */
+.destination-item__name {
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-snug);
+}
+
+/* 英文國名 */
+.destination-item__name span {
+    margin-left: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-family: var(--font-display);
+    font-size: 0.8em;
+    font-weight: var(--fw-regular);
+}
+
+/* 簡短描述 */
+.destination-item__tagline {
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+    line-height: var(--lh-normal);
+}
+
+/* 行程數、價格 */
+.destination-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+
+    margin-top: var(--space-1);
+
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+}
+
+.destination-item__meta>span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.destination-item__meta i {
+    color: var(--color-primary);
+}
+
+/* 右側箭頭 */
+.destination-item__arrow {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: 50%;
+
+    color: var(--text-secondary);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+/* Hover */
+.destination-item:hover {
+    transform: translateX(4px);
+
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.destination-item:hover .destination-item__arrow {
+    transform: rotate(45deg);
+
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* 選中狀態 */
+.destination-item.is-active {
+    background:
+        linear-gradient(135deg,
+            rgba(89, 225, 194, 0.12),
+            rgba(114, 214, 232, 0.05)),
+        var(--color-bg-secondary);
+
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.destination-item.is-active .destination-item__arrow {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--text-inverse);
+}
+
+/* Stat Item 數據項目 */
+.stat-item {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-2);
+}
+
+/* 數字 */
+.stat-item__value {
+    color: var(--color-primary);
+
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: var(--fw-regular);
+    line-height: 1;
+}
+
+/* 標籤 */
+.stat-item__label {
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+    letter-spacing: var(--ls-wide);
+}
+
+/* Icon Button 圓形圖示按鈕 */
+.icon-btn {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: 50%;
+
+    background: var(--color-bg-secondary);
+    color: var(--text-primary);
+
+    font-size: var(--text-lg);
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.icon-btn:hover {
+    transform: translateY(-2px);
+
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.icon-btn:active {
+    transform: translateY(1px);
+}
+
+.icon-btn--primary {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    border-color: var(--color-primary);
+}
+
+.icon-btn--primary:hover {
+    background: var(--color-primary-hover);
+    color: var(--text-inverse);
+}
+
+/* Testimonial 旅客評價 */
+.testimonial {
+    width: 100%;
+    max-width: 900px;
+
+    display: grid;
+    justify-items: center;
+    gap: var(--space-8);
+
+    text-align: center;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+/* 切換動畫 */
+.testimonial.is-changing {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+/* 評分 */
+.testimonial__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+
+    padding: var(--space-2) var(--space-4);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-bg);
+    color: var(--text-primary);
+
+    font-size: var(--text-sm);
+}
+
+.testimonial__rating i {
+    color: var(--color-warning);
+}
+
+.testimonial__rating span {
+    color: var(--text-muted);
+}
+
+/* 評價內容 */
+.testimonial__quote {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-loose);
+}
+
+/* 旅客資料 */
+.testimonial__author {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    text-align: left;
+}
+
+.testimonial__avatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: var(--border-w) solid var(--color-border);
+}
+
+.testimonial__name {
+    margin-bottom: var(--space-1);
+
+    color: var(--text-primary);
+
+    font-weight: var(--fw-semibold);
+}
+
+.testimonial__meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+/* 輪播控制 */
+.testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.testimonial-controls__dots {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.testimonial-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: var(--radius-pill);
+
+    background: var(--color-border);
+    cursor: pointer;
+
+    transition:
+        width .25s ease,
+        background .25s ease;
+}
+
+.testimonial-dot.is-active {
+    width: 32px;
+    background: var(--color-primary);
+}
 
 /* 表單 */
 /* 表單開啟grid排列 */
