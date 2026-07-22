@@ -1,0 +1,264 @@
+.site-footer {
+    position: relative;
+    overflow: hidden;
+
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-8);
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(89, 225, 194, 0.08),
+            transparent 30%),
+        #020a13;
+
+    color: var(--text-secondary);
+}
+
+/* 主要內容排列 */
+.site-footer__main {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 1.5fr) repeat(3, minmax(150px, 0.6fr));
+
+    gap: var(--space-12);
+
+    padding-bottom: var(--space-16);
+}
+
+/* 品牌欄 */
+.site-footer__brand {
+    max-width: 520px;
+}
+
+/* Logo */
+.site-footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-bottom: var(--space-4);
+}
+
+.site-footer__logo img {
+    display: block;
+
+    width: auto;
+    height: 58px;
+
+    object-fit: contain;
+}
+
+/* 品牌介紹 */
+.site-footer__desc {
+    max-width: 460px;
+    margin-bottom: var(--space-8);
+
+    color: var(--text-secondary);
+
+    line-height: var(--lh-loose);
+}
+
+/* 電子報 */
+.site-footer__newsletter-label {
+    display: block;
+
+    margin-bottom: var(--space-3);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+    letter-spacing: var(--ls-wide);
+}
+
+.site-footer__newsletter-group {
+    max-width: 460px;
+
+    padding: var(--space-1);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-pill);
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.site-footer__newsletter-group .input {
+    min-height: 44px;
+
+    border: 0;
+    background: transparent;
+}
+
+.site-footer__newsletter-group .input:focus-visible {
+    box-shadow: none;
+}
+
+.site-footer__newsletter-group .btn {
+    flex: 0 0 auto;
+}
+
+/* Footer 欄位標題 */
+.site-footer__title {
+    margin-bottom: var(--space-5);
+
+    color: var(--text-primary);
+
+    font-size: var(--text-base);
+    font-weight: var(--fw-semibold);
+}
+
+/* 清單 */
+.site-footer__list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.site-footer__list a {
+    color: var(--text-secondary);
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.site-footer__list a:hover {
+    color: var(--color-primary);
+}
+
+/* 社群 */
+.site-footer__socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* 聯絡資訊 */
+.site-footer address {
+    font-style: normal;
+}
+
+.site-footer__contact li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-3);
+}
+
+.site-footer__contact i {
+    margin-top: 0.15em;
+    color: var(--color-primary);
+}
+
+/* 最底部 */
+.site-footer__bottom {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+
+    padding-top: var(--space-8);
+
+    border-top: var(--border-w) solid var(--color-border);
+
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.site-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.site-footer__legal a,
+.site-footer__legal button {
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+    color: var(--text-muted);
+
+    cursor: pointer;
+
+    transition: color .2s ease;
+}
+
+.site-footer__legal a:hover,
+.site-footer__legal button:hover {
+    color: var(--color-primary);
+}
+
+/* 背景大型品牌字 */
+.site-footer__watermark {
+    position: absolute;
+    right: -2vw;
+    bottom: -0.2em;
+    z-index: 0;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    font-family: var(--font-display);
+    font-size: clamp(7rem, 17vw, 18rem);
+    line-height: 0.75;
+
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 1024px) {
+    .site-footer__main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__brand {
+        grid-column: 1 / -1;
+        max-width: 680px;
+    }
+
+    .site-footer__bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding-top: var(--space-16);
+    }
+
+    .site-footer__main {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+
+        padding-bottom: var(--space-12);
+    }
+
+    .site-footer__brand {
+        grid-column: auto;
+    }
+
+    .site-footer__newsletter-group {
+        grid-template-columns: 1fr auto;
+    }
+
+    .site-footer__bottom {
+        padding-top: var(--space-6);
+    }
+
+    .site-footer__legal {
+        gap: var(--space-4);
+    }
+
+    .site-footer__watermark {
+        right: auto;
+        left: 0;
+
+        font-size: 28vw;
+    }
+}

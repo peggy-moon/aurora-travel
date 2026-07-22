@@ -23,10 +23,15 @@
     <link href="CSS/base.css" rel="stylesheet">
     <link href="CSS/typography.css" rel="stylesheet">
     <link href="CSS/layout.css" rel="stylesheet">
+    <link href="CSS/header.css" rel="stylesheet">
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/home.css" rel="stylesheet">
+    <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/style.css" rel="stylesheet">
+
+    <!-- Header 滾動效果 -->
+    <script src="JS/header.js" defer></script>
 
     <!-- destination資料 -->
     <script src="JS/destination-data.js" defer></script>
@@ -43,6 +48,9 @@
     <!-- 旅客評價區 -->
     <script src="JS/testimonials.js" defer></script>
 
+    <!-- 通用通知框 -->
+    <script src="JS/notice-modal.js" defer></script>
+
 
     <!-- 有這句在電腦上預覽手機版網頁才能正常顯示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +58,84 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header__container">
+            <a href="index.html" class="site-header__logo" aria-label="Aurora Travel 首頁">
+                <img src="images/logo.png" alt="Aurora Travel">
+            </a>
+
+            <!-- 手機版選單按鈕 -->
+            <button class="site-nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false"
+                aria-controls="site-nav">
+                <span class="site-nav-toggle__line"></span>
+                <span class="site-nav-toggle__line"></span>
+                <span class="site-nav-toggle__line"></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <a href="index.html" class="site-nav__brand">
+                    <img src="images/logo.png" alt="Aurora Travel">
+                </a>
+                <ul class="site-nav__list">
+                    <li><a href="index.html" class="site-nav__link is-active" aria-current="page">首頁</a></li>
+                    <li><a href="about.html" class="site-nav__link">關於我們</a></li>
+                    <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
+                    <li><a href="travel.html" class="site-nav__link">行程清單</a></li>
+                    <li><a href="news.html" class="site-nav__link">最新消息</a></li>
+                    <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
+                    <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
+                </ul>
+
+                <div class="site-nav__mobile-extra">
+                    <div class="site-nav__service">
+                        <p class="site-nav__extra-label">
+                            CUSTOMER SERVICE
+                        </p>
+                        <div class="site-nav__service-content">
+                            <div>
+                                <p class="site-nav__service-title">
+                                    客服時間
+                                </p>
+                                <p class="site-nav__service-time">
+                                    週一至週五 09:00－18:00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-nav__social">
+                        <p class="site-nav__extra-label">
+                            FOLLOW AURORA
+                        </p>
+                        <div class="site-nav__social-list">
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="Instagram" aria-label="Aurora Travel Instagram 籌備中">
+                                <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="YouTube" aria-label="Aurora Travel YouTube 籌備中">
+                                <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="Facebook" aria-label="Aurora Travel Facebook 籌備中">
+                                <i class="ti ti-brand-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary site-nav__contact-btn">
+                        聯絡我們
+                        <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </nav>
+            <!-- 預約按鈕 -->
+            <a href="contact.html" class="site-header__cta">
+                預約諮詢
+                <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+
     <!-- Hero -->
     <section class="hero">
         <div class="hero__overlay"></div>
@@ -63,7 +149,7 @@
                 <br>裡的綠色風暴
             </h1>
             <p class="hero__slogan">
-                -CHASE THE AURORA-
+                CHASE THE AURORA
             </p>
             <p class="hero__desc">
                 從冰島火山到芬蘭雪林，從挪威峽灣到瑞典拉普蘭。<br>
@@ -681,7 +767,7 @@
                         </a>
                         <a href="contact.html" class="btn travel-consultation__download">
                             查看所有行程
-                            <i class="ti ti-download"></i>
+                            <i class="ti ti-rocket"></i>
                         </a>
                     </div>
                     <div class="travel-consultation__stats">
@@ -702,4 +788,151 @@
             </article>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__main">
+                <!-- 品牌與電子報 -->
+                <div class="site-footer__brand">
+                    <a href="index.html" class="site-footer__logo" aria-label="Aurora Travel 首頁">
+                        <img src="images/logo.png" alt="Aurora Travel">
+                    </a>
+                    <p class="site-footer__desc">
+                        我們相信旅行不只是移動，更是一種心靈的靠近。
+                        Aurora Travel 帶你走進北歐最深邃的極夜，
+                        看見一生一次的極光時刻。
+                    </p>
+                    <form class="site-footer__newsletter" id="newsletter-form">
+                        <label class="site-footer__newsletter-label" for="footer-email">
+                            訂閱極光通訊
+                        </label>
+                        <div class="input-group site-footer__newsletter-group">
+                            <input class="input" id="footer-email" name="email" type="email" placeholder="輸入你的電子郵件"
+                                autocomplete="email" required>
+
+                            <button class="btn btn-primary btn--sm" type="submit">
+                                訂閱
+                                <i class="ti ti-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 旅程 -->
+                <nav class="site-footer__column" aria-label="頁尾旅程導覽">
+                    <h2 class="site-footer__title">
+                        快速連結
+                    </h2>
+
+                    <ul class="site-footer__list">
+                        <li><a href="about.html">關於我們</a></li>
+                        <li><a href="destinations.html">目的地</a></li>
+                        <li><a href="travel.html">行程清單</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="contact.html">聯絡我們</a></li>
+                        <li><a href="faq.html">常見問題</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 社群 -->
+                <div class="site-footer__column">
+                    <h2 class="site-footer__title">
+                        追蹤我們
+                    </h2>
+                    <ul class="site-footer__list site-footer__socials">
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="Instagram">
+                                <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="YouTube">
+                                <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+                                YouTube
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="Facebook">
+                                <i class="ti ti-brand-facebook" aria-hidden="true"></i>
+                                Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 聯絡資訊 -->
+                <address class="site-footer__column">
+                    <h2 class="site-footer__title">
+                        聯絡
+                    </h2>
+                    <ul class="site-footer__list site-footer__contact">
+                        <li>
+                            <i class="ti ti-map-pin" aria-hidden="true"></i>
+                            <span>
+                                台北市信義區松高路 68 號 12F
+                            </span>
+                        </li>
+                        <li>
+                            <i class="ti ti-phone" aria-hidden="true"></i>
+                            <a href="tel:+886287886688">
+                                +886 2 8788 6688
+                            </a>
+                        </li>
+                        <li>
+                            <i class="ti ti-mail" aria-hidden="true"></i>
+                            <a href="mailto:hello@aurora-travel.com">
+                                hello@aurora-travel.com
+                            </a>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+            <div class="site-footer__bottom">
+                <p>
+                    Aurora Travel 為作品集展示專案，所有內容皆為設計示意。
+                </p>
+                <nav class="site-footer__legal" aria-label="法律資訊">
+                    <a href="#" class="notice-trigger" data-notice-type="privacy">
+                        隱私權政策
+                    </a>
+                    <a href="#" class="notice-trigger" data-notice-type="terms">
+                        服務條款
+                    </a>
+                    <button type="button" class="notice-trigger" data-notice-type="cookies">
+                        Cookie 設定
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <p class="site-footer__watermark" aria-hidden="true">
+            Aurora Travel
+        </p>
+    </footer>
+
+    <!-- 通用通知框 -->
+    <div class="notice-modal" id="notice-modal" aria-hidden="true">
+        <div class="notice-modal__overlay"></div>
+        <div class="notice-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="notice-modal-title"
+            aria-describedby="notice-modal-desc">
+            <button class="notice-modal__close" type="button" aria-label="關閉通知">
+                <i class="ti ti-x"></i>
+            </button>
+            <div class="notice-modal__icon">
+                <i class="ti ti-info-circle" data-role="notice-icon"></i>
+            </div>
+            <h2 class="notice-modal__title" id="notice-modal-title" data-role="notice-title">
+                通知
+            </h2>
+            <p class="notice-modal__desc" id="notice-modal-desc" data-role="notice-desc">
+                這是一則通知。
+            </p>
+            <button class="btn btn-primary notice-modal__confirm" type="button" data-role="notice-confirm">
+                我知道了
+            </button>
+        </div>
+    </div>
 </body>
+
+</html>

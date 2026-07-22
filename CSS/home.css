@@ -39,7 +39,8 @@
     position: relative;
     z-index: 1;
 
-    padding-block: var(--space-12);
+    padding-top: calc(96px + var(--space-8));
+    padding-bottom: var(--space-12);
 }
 
 .hero__eyebrow {
@@ -454,7 +455,7 @@
 
 /* 左右切版 */
 .travel-consultation__card {
-    min-height: 520px;
+    min-height: 540px;
 
     display: grid;
     grid-template-columns:
@@ -468,7 +469,7 @@
 
 .travel-consultation__media {
     position: relative;
-    min-height: 520px;
+    min-height: 540px;
     overflow: hidden;
 }
 
@@ -545,7 +546,7 @@
 
 /* 主標題 */
 .travel-consultation__title {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
 
     color: var(--text-primary);
 
@@ -708,15 +709,16 @@
     }
 
     .travel-consultation__media {
-        min-height: 440px;
+        min-height: 0;
+        height: 440px;
     }
 
     .travel-consultation__content {
         padding: var(--space-10);
     }
 
-    .travel-consultation__media {
-        height: 420px;
+    .travel-consultation__title {
+        font-size: clamp(1.5rem, 8vw, 3.5rem);
     }
 }
 
@@ -852,34 +854,6 @@
         padding: var(--space-5);
     }
 
-    .featured-tours__header {
-        align-items: flex-start;
-        flex-direction: column;
-
-        margin-bottom: var(--space-8);
-    }
-
-    .featured-tours__title {
-        font-size: clamp(2.3rem, 11vw, 3.5rem);
-    }
-
-    .featured-tours__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-tours__grid .tour-card:last-child {
-        grid-column: auto;
-        max-width: none;
-    }
-
-    .tour-card__media {
-        aspect-ratio: 16 / 11;
-    }
-
-    .tour-card__body {
-        padding: var(--space-5);
-    }
-
     .traveller-stories__container {
         gap: var(--space-10);
     }
@@ -907,7 +881,7 @@
     }
 
     .travel-consultation__media {
-        min-height: 420px;
+        height: 420px;
     }
 
     .travel-consultation__season {
@@ -929,7 +903,7 @@
     }
 
     .travel-consultation__title {
-        font-size: clamp(2.3rem, 11vw, 3.5rem);
+        font-size: clamp(1rem, 8vw, 3.5rem);
     }
 
     .travel-consultation__actions {
@@ -947,10 +921,6 @@
 
     .travel-consultation__stats .stat-item__value {
         font-size: clamp(1.6rem, 8vw, 2.3rem);
-    }
-
-    .travel-consultation__media {
-        height: 340px;
     }
 }
 
@@ -977,13 +947,14 @@
         display: block;
 
         margin-bottom: var(--space-48);
+        padding-left: var(--space-2);
 
         font-family: var(--font-display);
         font-size: var(--text-sm);
         letter-spacing: 0.75em;
         text-transform: uppercase;
 
-        color: var(--text-white-soft);
+        color: var(--color-primary);
         opacity: 0.5;
     }
 
@@ -1002,7 +973,7 @@
     }
 
     .travel-consultation__media {
-        height: 280px;
+        height: 220px;
     }
 }
 
