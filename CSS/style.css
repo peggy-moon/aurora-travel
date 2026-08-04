@@ -1,13 +1,59 @@
+.page-hero--destinations {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/destinations-hero.jpg");
+}
 
+.page-hero--travel {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/travel-hero.jpg");
+}
 
+.page-hero--news {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/news-hero.jpg");
+}
 
+.page-hero--contact {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/contact-hero.jpg");
+}
 
-
-
-@media (max-width: 480px) {
-
-    .mobile-break {
-        display: block;
-    }
-
+.page-hero--faq {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/faq-hero.jpg");
 }

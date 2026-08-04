@@ -28,6 +28,11 @@ body {
     background: var(--gradient-bg);
 }
 
+/* <figure>瀏覽器有預設margin會影響排版 */
+figure {
+    margin: 0;
+}
+
 /* 常見文字元素：避免預設 margin 把版面撐爆 */
 h1,
 h2,

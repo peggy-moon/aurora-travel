@@ -7,9 +7,11 @@ const destinations = {
         description: "在雷克雅維克郊野的黑色沙灘與冰川湖畔，等待舞動的綠色極光劃過夜空。",
         image: "images/destinations/iceland.jpg",
         thumbnail: "images/destinations/iceland-thumb.jpg",
+        imageAlt: "冰島黑沙灘上空舞動的綠色極光",
         price: "NT$128,000",
         tours: "12",
-        button: "瀏覽冰島行程"
+        button: "瀏覽冰島行程",
+        url: "travel.html?destination=iceland"
     },
 
     finland: {
@@ -18,10 +20,12 @@ const destinations = {
         tagline: "玻璃屋下的極光夜",
         description: "在拉普蘭雪松林間的玻璃圓頂屋，蓋著羊毛毯仰望整片舞動的北極光。",
         image: "images/destinations/finland.jpg",
+        imageAlt: "芬蘭雪林玻璃屋上空的極光",
         thumbnail: "images/destinations/finland-thumb.jpg",
         price: "NT$145,000",
         tours: "9",
-        button: "瀏覽芬蘭行程"
+        button: "瀏覽芬蘭行程",
+        url: "travel.html?destination=finland"
     },
 
     norway: {
@@ -30,10 +34,12 @@ const destinations = {
         tagline: "峽灣間的綠色簾幕",
         description: "從特羅姆瑟出海追極光，冷冽峽灣倒映著滿天星斗與極光光帶。",
         image: "images/destinations/norway.jpg",
+        imageAlt: "挪威峽灣夜空中的綠色極光",
         thumbnail: "images/destinations/norway-thumb.jpg",
         price: "NT$152,000",
         tours: "10",
-        button: "瀏覽挪威行程"
+        button: "瀏覽挪威行程",
+        url: "travel.html?destination=norway"
     },
 
     sweden: {
@@ -42,10 +48,12 @@ const destinations = {
         tagline: "阿比斯庫的極光心臟",
         description: "在阿比斯庫國家公園避開光害，是全球公認最容易看到極光的秘境。",
         image: "images/destinations/sweden.jpg",
+        imageAlt: "瑞典阿比斯庫國家公園的極光夜空",
         thumbnail: "images/destinations/sweden-thumb.jpg",
-        price: "NT$188,000",
+        price: "NT$138,000",
         tours: "8",
-        button: "瀏覽瑞典行程"
+        button: "瀏覽瑞典行程",
+        url: "travel.html?destination=sweden"
     }
 
 };

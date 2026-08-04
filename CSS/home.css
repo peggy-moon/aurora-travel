@@ -156,42 +156,13 @@
     margin-bottom: var(--space-10);
 }
 
-/* 英文裝飾文字 */
-.destinations__eyebrow {
-    margin-bottom: var(--space-4);
-
-    color: var(--color-primary);
-
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    letter-spacing: var(--ls-widest);
-    text-transform: uppercase;
-}
-
-/* 中文大標題 */
 .destinations__title {
-    color: var(--text-primary);
-
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: var(--fw-medium);
-    line-height: var(--lh-tight);
-    letter-spacing: var(--ls-tight);
-}
-
-/* 標題中的品牌色 */
-.destinations__title span {
-    color: var(--color-primary);
+    margin-bottom: 0;
 }
 
 /* 右側介紹 */
 .destinations__intro {
     max-width: 480px;
-
-    color: var(--text-secondary);
-
-    font-size: var(--text-base);
-    line-height: var(--lh-loose);
 }
 
 /* 讓共用 filter-tabs 在這區靠左排列 */
@@ -241,58 +212,6 @@
         var(--color-bg-secondary);
 }
 
-/* 標題區 */
-.why-aurora__header {
-    max-width: 760px;
-
-    margin-inline: auto;
-    margin-bottom: var(--space-16);
-
-    text-align: center;
-}
-
-/* 英文小標 */
-.why-aurora__eyebrow {
-    margin-bottom: var(--space-4);
-
-    color: var(--color-primary);
-
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    letter-spacing: var(--ls-widest);
-    text-transform: uppercase;
-}
-
-/* 大標題 */
-.why-aurora__title {
-    margin-bottom: var(--space-6);
-
-    color: var(--text-primary);
-
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: var(--fw-medium);
-    line-height: var(--lh-tight);
-}
-
-/* 標題品牌色 */
-.why-aurora__title span {
-    color: var(--color-primary);
-}
-
-/* 介紹文字 */
-.why-aurora__intro {
-    color: var(--text-secondary);
-
-    font-size: var(--text-base);
-    line-height: var(--lh-loose);
-}
-
-/* 四張特色卡 */
-.why-aurora__features {
-    margin-bottom: var(--space-16);
-}
-
 /* 數據條 */
 .why-aurora__stats {
     display: grid;
@@ -319,7 +238,6 @@
 }
 
 /* Featured Tours 精選行程 */
-
 .featured-tours {
     background:
         radial-gradient(circle at 85% 15%,
@@ -333,35 +251,12 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: var(--space-8);
 
     margin-bottom: var(--space-12);
 }
 
-/* 英文小標 */
-.featured-tours__eyebrow {
-    margin-bottom: var(--space-4);
-
-    color: var(--color-primary);
-
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    letter-spacing: var(--ls-widest);
-    text-transform: uppercase;
-}
-
-/* 標題 */
 .featured-tours__title {
-    color: var(--text-primary);
-
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: var(--fw-medium);
-    line-height: var(--lh-tight);
-}
-
-.featured-tours__title span {
-    color: var(--color-primary);
+    margin-bottom: 0;
 }
 
 /* 查看全部 */
@@ -391,11 +286,8 @@
     gap: var(--space-6);
 }
 
-/* =========================
-   Traveller Stories 旅客故事
-========================= */
-
-.traveller-stories {
+/* Traveler Stories 旅客評價 */
+.traveler-stories {
     position: relative;
     overflow: hidden;
 
@@ -406,45 +298,12 @@
         var(--color-bg-secondary);
 }
 
-.traveller-stories__container {
+.traveler-stories__container {
     display: grid;
     justify-items: center;
-    gap: var(--space-12);
-}
-
-/* 標題區 */
-.traveller-stories__header {
-    text-align: center;
-}
-
-/* 英文小標 */
-.traveller-stories__eyebrow {
-    margin-bottom: var(--space-4);
-
-    color: var(--color-primary);
-
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    letter-spacing: var(--ls-widest);
-    text-transform: uppercase;
-}
-
-/* 中文標題 */
-.traveller-stories__title {
-    color: var(--text-primary);
-
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: var(--fw-medium);
-    line-height: var(--lh-tight);
-}
-
-.traveller-stories__title span {
-    color: var(--color-primary);
 }
 
 /* Travel Consultation 旅遊諮詢 CTA */
-
 .travel-consultation {
     background:
         radial-gradient(circle at 80% 20%,
@@ -523,7 +382,6 @@
 }
 
 /* 右側內容 */
-
 .travel-consultation__content {
     display: flex;
     flex-direction: column;
@@ -536,7 +394,7 @@
 .travel-consultation__eyebrow {
     margin-bottom: var(--space-4);
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-family: var(--font-display);
     font-size: var(--text-sm);
@@ -580,23 +438,7 @@
     margin-bottom: var(--space-10);
 }
 
-/* 第二顆外框按鈕 */
-.travel-consultation__download {
-    border-color: var(--color-border);
-
-    background: transparent;
-    color: var(--text-primary);
-}
-
-.travel-consultation__download:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-
-    box-shadow: var(--glow-primary);
-}
-
 /*  下方數據 */
-
 .travel-consultation__stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -718,7 +560,7 @@
     }
 
     .travel-consultation__title {
-        font-size: clamp(1.5rem, 8vw, 3.5rem);
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
 }
 
@@ -736,10 +578,6 @@
 
     .destinations__header {
         margin-bottom: var(--space-8);
-    }
-
-    .destinations__title {
-        font-size: clamp(2.4rem, 11vw, 3.5rem);
     }
 
     .destination-featured {
@@ -794,21 +632,8 @@
         height: 38px;
     }
 
-    .why-aurora__header {
-        margin-bottom: var(--space-10);
-        text-align: left;
-    }
-
-    .why-aurora__eyebrow {
-        margin-inline: 0;
-    }
-
     .why-aurora__title {
         font-size: clamp(2.3rem, 11vw, 3.5rem);
-    }
-
-    .why-aurora__features {
-        margin-bottom: var(--space-10);
     }
 
     .feature-card--vertical {
@@ -826,17 +651,6 @@
         font-size: clamp(2rem, 10vw, 3rem);
     }
 
-    .featured-tours__header {
-        align-items: flex-start;
-        flex-direction: column;
-
-        margin-bottom: var(--space-8);
-    }
-
-    .featured-tours__title {
-        font-size: clamp(2.3rem, 11vw, 3.5rem);
-    }
-
     .featured-tours__grid {
         grid-template-columns: 1fr;
     }
@@ -852,14 +666,6 @@
 
     .tour-card__body {
         padding: var(--space-5);
-    }
-
-    .traveller-stories__container {
-        gap: var(--space-10);
-    }
-
-    .traveller-stories__title {
-        font-size: clamp(2.3rem, 11vw, 3.5rem);
     }
 
     .testimonial {
@@ -900,10 +706,6 @@
 
     .travel-consultation__content {
         padding: var(--space-6);
-    }
-
-    .travel-consultation__title {
-        font-size: clamp(1rem, 8vw, 3.5rem);
     }
 
     .travel-consultation__actions {
@@ -970,6 +772,10 @@
 
     .destinations__tabs .filter-tab {
         width: 100%;
+    }
+
+    .featured-tours__link {
+        display: none;
     }
 
     .travel-consultation__media {

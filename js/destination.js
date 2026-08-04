@@ -78,14 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             control.classList.toggle("is-active", isActive);
 
-            // 上方頁籤使用 aria-selected
-            if (control.getAttribute("role") === "tab") {
-                control.setAttribute(
-                    "aria-selected",
-                    String(isActive)
-                );
-            }
-
             // 右側卡片按鈕使用 aria-pressed
             if (control.hasAttribute("aria-pressed")) {
                 control.setAttribute(
@@ -108,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.setTimeout(() => {
             image.src = destination.image;
-            image.alt = `${destination.name}${destination.tagline}`;
+            image.alt = destination.imageAlt;
 
             name.textContent = destination.name;
             english.textContent = destination.english;
@@ -117,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price.textContent = destination.price;
             tours.textContent = `${destination.tours} 條`;
             buttonText.textContent = destination.button;
+            button.href = destination.url;
 
             updateActiveState(destinationId);
 

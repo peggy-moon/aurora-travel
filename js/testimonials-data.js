@@ -13,7 +13,7 @@ const testimonials = [
         quote:
             "「芬蘭玻璃屋比照片裡還要夢幻。晚上躺在床上就能看見極光，領隊也很有耐心地教我們拍攝，整趟旅程非常難忘。」",
 
-        name: "Kevin Lin",
+        name: "Julian Wu",
         meta: "來自高雄・攝影愛好者",
         rating: "4.9",
         avatar: "images/travelers-Julian-Wu.jpg"
@@ -23,8 +23,8 @@ const testimonials = [
         quote:
             "「原本最擔心天候不穩，沒想到團隊每天都會依照極光預報調整路線。最後真的在挪威峽灣旁看見整片天空發亮。」",
 
-        name: "Yuki Wang",
-        meta: "來自台中・自由工作者",
+        name: "Sophia Lin",
+        meta: "來自新竹．行銷主管",
         rating: "5.0",
         avatar: "images/travelers-Sophia-Lin.jpg"
     }

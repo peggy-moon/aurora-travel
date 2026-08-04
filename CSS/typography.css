@@ -182,7 +182,7 @@
 
 /* 標題基底 */
 .heading {
-    font-family: var(--font-sans);
+    font-family: var(--font-heading);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     color: var(--text-primary);

@@ -62,12 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateDots() {
         dots.forEach((dot, index) => {
             const isActive = index === currentIndex;
-
+    
             dot.classList.toggle("is-active", isActive);
-            dot.setAttribute(
-                "aria-selected",
-                String(isActive)
-            );
+    
+            if (isActive) {
+                dot.setAttribute("aria-current", "true");
+            } else {
+                dot.removeAttribute("aria-current");
+            }
         });
     }
 

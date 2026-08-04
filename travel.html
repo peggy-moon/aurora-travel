@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="zh-Hant">
 
 <head>
     <meta charset="utf-8">
@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Marcellus、日本明朝體、思源宋體 -->
+    <!-- 思源黑體、Marcellus、日本明朝體、思源宋體 -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Marcellus&family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
 
     <!-- icon -->
@@ -26,7 +26,6 @@
     <link href="CSS/header.css" rel="stylesheet">
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
-    <link href="CSS/home.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/style.css" rel="stylesheet">
 
@@ -63,10 +62,10 @@
                     <img src="images/logo.png" alt="Aurora Travel">
                 </a>
                 <ul class="site-nav__list">
-                    <li><a href="index.html" class="site-nav__link is-active" aria-current="page">首頁</a></li>
+                    <li><a href="index.html" class="site-nav__link" aria-current="page">首頁</a></li>
                     <li><a href="about.html" class="site-nav__link">關於我們</a></li>
                     <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
-                    <li><a href="travel.html" class="site-nav__link">行程清單</a></li>
+                    <li><a href="travel.html" class="site-nav__link is-active">行程清單</a></li>
                     <li><a href="news.html" class="site-nav__link">最新消息</a></li>
                     <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
                     <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
@@ -120,6 +119,26 @@
             </a>
         </div>
     </header>
+
+    <section class="page-hero page-hero--travel">
+        <div class="container page-hero__inner">
+            <div class="page-hero__content">
+                <p class="page-hero__eyebrow" lang="en">
+                    CURATED JOURNEYS
+                </p>
+                <h1 class="page-hero__title">
+                    找到屬於你的
+                    <br>
+                    極光旅程
+                </h1>
+                <p class="page-hero__desc">
+                    從入門到挑戰、從 5 天到 12 天，我們為每種旅行風格準備了精心策劃的極光行程。
+                </p>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -144,7 +163,7 @@
 
                             <button class="btn btn-primary btn--sm" type="submit">
                                 訂閱
-                                <i class="ti ti-arrow-right"></i>
+                                <i class="ti ti-arrow-right" aria-hidden="true"></i>
                             </button>
                         </div>
                     </form>
@@ -248,10 +267,10 @@
         <div class="notice-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="notice-modal-title"
             aria-describedby="notice-modal-desc">
             <button class="notice-modal__close" type="button" aria-label="關閉通知">
-                <i class="ti ti-x"></i>
+                <i class="ti ti-x" aria-hidden="true"></i>
             </button>
             <div class="notice-modal__icon">
-                <i class="ti ti-info-circle" data-role="notice-icon"></i>
+                <i class="ti ti-info-circle" data-role="notice-icon" aria-hidden="true"></i>
             </div>
             <h2 class="notice-modal__title" id="notice-modal-title" data-role="notice-title">
                 通知

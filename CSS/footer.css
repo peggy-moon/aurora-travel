@@ -81,6 +81,10 @@
     border-radius: var(--radius-pill);
 
     background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .site-footer__newsletter-group .input {
@@ -91,11 +95,17 @@
 }
 
 .site-footer__newsletter-group .input:focus-visible {
+    outline: none;
     box-shadow: none;
 }
 
 .site-footer__newsletter-group .btn {
     flex: 0 0 auto;
+}
+
+.site-footer__newsletter-group:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 var(--focus-ring) var(--color-focus);
 }
 
 /* Footer 欄位標題 */

@@ -1,30 +1,31 @@
 const siteHeader = document.querySelector("#site-header");
-const hero = document.querySelector(".hero");
 
 const navToggle = document.querySelector(".site-nav-toggle");
 const siteNav = document.querySelector("#site-nav");
 const navLinks = document.querySelectorAll(".site-nav__link");
 
-if (siteHeader && hero) {
+
+if (siteHeader) {
+
     let isTicking = false;
 
     const updateHeader = () => {
-        const headerHeight = siteHeader.offsetHeight;
-        const heroBottom = hero.getBoundingClientRect().bottom;
 
         siteHeader.classList.toggle(
             "is-scrolled",
-            heroBottom <= headerHeight
+            window.scrollY > 40
         );
 
         isTicking = false;
     };
 
     const handleScroll = () => {
+
         if (isTicking) return;
 
         isTicking = true;
-        window.requestAnimationFrame(updateHeader);
+
+        requestAnimationFrame(updateHeader);
     };
 
     updateHeader();
@@ -33,7 +34,6 @@ if (siteHeader && hero) {
         passive: true
     });
 
-    window.addEventListener("resize", handleScroll);
 }
 
 

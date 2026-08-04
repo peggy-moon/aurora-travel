@@ -9,21 +9,24 @@
 /* Container 容器（限制內容寬度 + 置中）讓內容不會貼在邊邊 */
 .container-sm {
     width: min(720px, 100%);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
 }
 
 .container {
     width: min(1280px, 100%);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
 }
 
 .container-lg {
     width: min(1360px, 100%);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
 }
 
 .container-xl {
     width: min(1440px, 100%);
-}
-
-[class^="container"] {
     margin-inline: auto;
     padding-inline: var(--container-padding);
 }
