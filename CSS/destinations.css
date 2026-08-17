@@ -9,3 +9,664 @@
             transparent 55%),
         url("../images/destinations-hero.jpg");
 }
+
+.page-hero--destinations-iceland {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/destinations/destination-iceland-hero.jpg");
+}
+
+.page-hero--destinations-finland {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/destinations/destination-finland-hero.jpg");
+}
+
+.page-hero--destinations-norway {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/destinations/destination-norway-hero.jpg");
+}
+
+.page-hero--destinations-sweden {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/destinations/destination-sweden-hero.jpg");
+}
+
+/* Destination Overview */
+.destination-overview {
+    background:
+        radial-gradient(circle at 15% 15%,
+            rgba(89, 225, 194, 0.08),
+            transparent 28%),
+        radial-gradient(circle at 85% 75%,
+            rgba(155, 140, 255, 0.08),
+            transparent 28%),
+        var(--color-bg);
+}
+
+.destination-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+}
+
+.destination-card {
+    min-width: 0;
+}
+
+.destination-card__link {
+    min-height: 390px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.95fr) minmax(0, 1.05fr);
+
+    overflow: hidden;
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg-secondary);
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.destination-card__link:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.destination-card__media {
+    position: relative;
+
+    min-height: 100%;
+
+    overflow: hidden;
+
+    background: var(--color-bg-tertiary);
+}
+
+.destination-card__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s cubic-bezier(.22, .61, .36, 1),
+        filter .7s ease;
+}
+
+.destination-card__link:hover .destination-card__image {
+    transform: scale(1.06);
+    filter: brightness(1.06);
+}
+
+.destination-card__content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-8);
+}
+
+.destination-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-5);
+
+    color: var(--text-muted);
+
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    letter-spacing: var(--ls-wider);
+}
+
+.destination-card__line {
+    width: 38px;
+    height: 1px;
+
+    flex: 0 0 auto;
+
+    background: var(--color-primary);
+}
+
+.destination-card__title {
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 2.6vw, 3rem);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-tight);
+}
+
+.destination-card__title span {
+    margin-left: var(--space-2);
+
+    font-family: var(--font-display);
+    font-size: 0.72em;
+    font-weight: var(--fw-regular);
+}
+
+.destination-card__subtitle {
+    margin-bottom: var(--space-5);
+
+    color: var(--color-secondary);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    line-height: var(--lh-snug);
+}
+
+.destination-card__desc {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+    margin-bottom: var(--space-8);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-base);
+    line-height: var(--lh-loose);
+}
+
+.destination-card__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+
+    margin-top: auto;
+    padding-top: var(--space-5);
+
+    border-top: var(--border-w) solid var(--color-border);
+}
+
+.destination-card__price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.destination-card__price span {
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+.destination-card__price strong {
+    color: var(--text-primary);
+
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-regular);
+}
+
+.destination-card__action {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    flex: 0 0 auto;
+
+    color: var(--color-primary);
+
+    font-weight: var(--fw-semibold);
+}
+
+.destination-card__action i {
+    transition: transform .25s ease;
+}
+
+.destination-card__link:hover .destination-card__action i {
+    transform: translateX(5px);
+}
+
+/* Country Overview */
+.country-overview {
+    background:
+        radial-gradient(circle at 80% 20%,
+            rgba(89, 225, 194, 0.06),
+            transparent 32%),
+        var(--color-bg);
+}
+
+.country-overview__grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.85fr) minmax(0, 1.15fr);
+
+    align-items: center;
+
+    gap: clamp(var(--space-12),
+            7vw,
+            var(--space-24));
+}
+
+.country-overview__title {
+    margin-bottom: var(--space-8);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 3.4vw, 4rem);
+    font-weight: var(--fw-regular);
+    line-height: 1.25;
+}
+
+.country-overview__desc {
+    max-width: 620px;
+
+    color: var(--text-secondary);
+
+    font-size: clamp(var(--text-base),
+            1.15vw,
+            var(--text-lg));
+
+    line-height: 2;
+}
+
+.country-overview__features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-6);
+}
+
+/* Country Attractions */
+.country-attractions {
+    background: var(--color-bg-secondary);
+}
+
+.country-attractions .section-header {
+    margin-bottom: var(--space-16);
+}
+
+.country-attractions__list {
+    display: grid;
+    gap: var(--space-24);
+}
+
+.attraction {
+    align-items: center;
+}
+
+.attraction__media {
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg-tertiary);
+}
+
+.attraction__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s cubic-bezier(.22, .61, .36, 1),
+        filter .8s ease;
+}
+
+.attraction:hover .attraction__image {
+    transform: scale(1.04);
+    filter: brightness(1.05);
+}
+
+.attraction__content {
+    min-width: 0;
+}
+
+.attraction__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-4);
+
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+    letter-spacing: var(--ls-wider);
+}
+
+.attraction__line {
+    width: 32px;
+    height: 1px;
+
+    flex: 0 0 auto;
+
+    background: var(--color-primary);
+}
+
+.attraction__title {
+    margin-bottom: var(--space-6);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 3.25rem);
+    font-weight: var(--fw-regular);
+    line-height: 1.25;
+}
+
+.attraction__title span {
+    margin-left: var(--space-2);
+
+    font-family: var(--font-display);
+    font-size: 0.72em;
+    font-weight: var(--fw-regular);
+}
+
+.attraction__desc {
+    max-width: 620px;
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-lg);
+    line-height: var(--lh-loose);
+}
+
+.country-info__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.country-info__card {
+    min-height: 250px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-8);
+
+    text-align: center;
+}
+
+/* Country Reviews */
+.country-reviews {
+    background: var(--color-bg-secondary);
+}
+
+.country-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+}
+
+.traveler-review {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 300px;
+
+    padding: var(--space-10);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg);
+    box-shadow: var(--shadow-sm);
+}
+
+.traveler-review__rating {
+    display: flex;
+    gap: var(--space-1);
+
+    margin-bottom: var(--space-6);
+
+    color: var(--color-warning);
+    font-size: var(--text-lg);
+}
+
+.traveler-review__quote {
+    margin: 0 0 var(--space-8);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(
+        1.15rem,
+        1.4vw,
+        1.35rem
+    );
+
+    font-style: italic;
+    line-height: var(--lh-loose);
+}
+
+.traveler-review__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-top: auto;
+}
+
+.traveler-review__avatar {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: var(--border-w) solid var(--color-border);
+}
+
+.traveler-review__name {
+    margin-bottom: var(--space-1);
+
+    color: var(--text-primary);
+
+    font-weight: var(--fw-semibold);
+}
+
+.traveler-review__meta {
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+@media (max-width: 1024px) {
+
+    .destination-overview__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card__link {
+        min-height: 360px;
+
+        grid-template-columns:
+            minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .country-overview__grid {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-12);
+    }
+
+    .country-overview__content {
+        max-width: 760px;
+    }
+
+    .attraction {
+        align-items: stretch;
+    }
+
+    .country-info__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-4);
+    }
+
+    .country-info__card {
+        padding: var(--space-6);
+    }
+
+    .country-reviews__grid {
+        gap: var(--space-6);
+    }
+
+    .traveler-review {
+        padding: var(--space-8);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .destination-card__link {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card__media {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .destination-card__content {
+        padding: var(--space-6);
+    }
+
+    .destination-card__title {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+    }
+
+    .destination-card__desc {
+        margin-bottom: var(--space-6);
+    }
+
+    .country-overview__grid {
+        gap: var(--space-10);
+    }
+
+    .country-overview__title {
+        margin-bottom: var(--space-6);
+
+        font-size: clamp(2.1rem,
+                9vw,
+                3rem);
+    }
+
+    .country-overview__desc {
+        font-size: var(--text-base);
+        line-height: 1.9;
+    }
+
+    .country-overview__features {
+        grid-template-columns: 1fr;
+    }
+
+    .country-overview__feature {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .destination-overview__grid {
+        gap: var(--space-6);
+    }
+
+    .destination-card__media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .destination-card__tag {
+        top: var(--space-4);
+        left: var(--space-4);
+    }
+
+    .destination-card__content {
+        padding: var(--space-5);
+    }
+
+    .destination-card__meta {
+        margin-bottom: var(--space-4);
+    }
+
+    .destination-card__footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .destination-card__action {
+        width: 100%;
+
+        justify-content: space-between;
+
+        padding-top: var(--space-2);
+    }
+
+    .country-info__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .country-reviews__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .traveler-review {
+        min-height: auto;
+
+        padding: var(--space-6);
+    }
+
+    .traveler-review__quote {
+        font-size: var(--text-lg);
+    }
+}

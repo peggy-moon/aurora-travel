@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>極光旅行｜AURORA TRAVEL</title>
+    <title>目的地｜極光旅行 Aurora Travel</title>
     <link rel="icon" href="images/logo-icon.png" type="image/x-icon">
 
     <!-- Google Font(下面這兩句意思是:等等要去 Google Fonts 拿東西，先幫我建立連線吧～) -->
@@ -28,7 +28,6 @@
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/destinations.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet">
 
     <!-- Header 滾動效果 -->
     <script src="JS/header.js" defer></script>
@@ -121,25 +120,256 @@
         </div>
     </header>
 
-    <section class="page-hero page-hero--destinations">
-        <div class="container page-hero__inner">
-            <div class="page-hero__content">
-                <p class="page-hero__eyebrow" lang="en">
-                    EXPLORE THE NORTH
-                </p>
-                <h1 class="page-hero__title">
-                    尋訪北境，
-                    <br>
-                    在四個國度邂逅極光
-                </h1>
-                <p class="page-hero__desc">
-                    從冰島的火山冰原到瑞典的藍洞秘境，四個極光觀測勝地，四種截然不同的北歐體驗。
-                </p>
+    <main>
+        <section class="page-hero page-hero--destinations">
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <p class="page-hero__eyebrow" lang="en">
+                        EXPLORE THE NORTH
+                    </p>
+                    <h1 class="page-hero__title">
+                        尋訪北境，
+                        <br>
+                        在四個國度邂逅極光
+                    </h1>
+                    <p class="page-hero__desc">
+                        從冰島的火山冰原到瑞典的藍洞秘境，四個極光觀測勝地，四種截然不同的北歐體驗。
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 目的地總覽 -->
+        <section class="destination-overview section-lg">
+            <div class="container">
+
+                <header class="section-header section-header--center">
+                    <p class="section-header__eyebrow" lang="en">
+                        EXPLORE DESTINATIONS
+                    </p>
+
+                    <h1 class="section-header__title">
+                        找到屬於你的
+                        <br>
+                        <span>北境極光旅程</span>
+                    </h1>
+
+                    <p class="section-header__desc">
+                        從冰島的火山冰川、芬蘭的寧靜雪林，
+                        到挪威峽灣與瑞典拉普蘭，
+                        每一座北歐國度都有不同的追光方式。
+                    </p>
+                </header>
+
+                <div class="destination-overview__grid">
+
+                    <!-- 冰島 -->
+                    <article class="destination-card">
+                        <a class="destination-card__link" href="destinations-iceland.html" aria-label="探索冰島極光行程">
+                            <figure class="destination-card__media">
+                                <img class="destination-card__image" src="images/destinations/iceland.jpg"
+                                    alt="冰島黑沙灘上空舞動的綠色極光" width="900" height="900">
+
+                                <span class="tag destination-card__tag">
+                                    熱門精選
+                                </span>
+                            </figure>
+
+                            <div class="destination-card__content">
+                                <div class="destination-card__meta">
+                                    <span class="destination-card__line"></span>
+
+                                    <span>
+                                        12 個行程
+                                    </span>
+                                </div>
+
+                                <h2 class="destination-card__title">
+                                    冰島
+                                    <span lang="en">Iceland</span>
+                                </h2>
+
+                                <p class="destination-card__subtitle">
+                                    火與冰的極光國度
+                                </p>
+
+                                <p class="destination-card__desc">
+                                    在雷克雅維克郊野的黑色沙灘與冰川湖畔，
+                                    等待舞動的綠色極光劃過夜空。
+                                </p>
+
+                                <div class="destination-card__footer">
+                                    <p class="destination-card__price">
+                                        <span>起價</span>
+                                        <strong>NT$ 128,000</strong>
+                                    </p>
+
+                                    <span class="destination-card__action">
+                                        探索行程
+                                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- 芬蘭 -->
+                    <article class="destination-card">
+                        <a class="destination-card__link" href="destinations-finland.html" aria-label="探索芬蘭極光行程">
+                            <figure class="destination-card__media">
+                                <img class="destination-card__image" src="images/destinations/finland.jpg"
+                                    alt="芬蘭雪林玻璃屋上空的極光" width="900" height="900" loading="lazy" decoding="async">
+
+                                <span class="tag destination-card__tag destination-card__tag--secondary">
+                                    夢幻推薦
+                                </span>
+                            </figure>
+
+                            <div class="destination-card__content">
+                                <div class="destination-card__meta">
+                                    <span class="destination-card__line"></span>
+
+                                    <span>
+                                        9 個行程
+                                    </span>
+                                </div>
+
+                                <h2 class="destination-card__title">
+                                    芬蘭
+                                    <span lang="en">Finland</span>
+                                </h2>
+
+                                <p class="destination-card__subtitle">
+                                    玻璃屋下的極光夜
+                                </p>
+
+                                <p class="destination-card__desc">
+                                    在拉普蘭雪松林間的玻璃圓頂屋，
+                                    蓋著羊毛毯仰望整片舞動的北極光。
+                                </p>
+
+                                <div class="destination-card__footer">
+                                    <p class="destination-card__price">
+                                        <span>起價</span>
+                                        <strong>NT$ 145,000</strong>
+                                    </p>
+
+                                    <span class="destination-card__action">
+                                        探索行程
+                                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- 挪威 -->
+                    <article class="destination-card">
+                        <a class="destination-card__link" href="destinations-norway.html" aria-label="探索挪威極光行程">
+                            <figure class="destination-card__media">
+                                <img class="destination-card__image" src="images/destinations/norway.jpg"
+                                    alt="挪威峽灣夜空中的綠色極光" width="900" height="900" loading="lazy" decoding="async">
+
+                                <span class="tag destination-card__tag">
+                                    熱門精選
+                                </span>
+                            </figure>
+
+                            <div class="destination-card__content">
+                                <div class="destination-card__meta">
+                                    <span class="destination-card__line"></span>
+
+                                    <span>
+                                        10 個行程
+                                    </span>
+                                </div>
+
+                                <h2 class="destination-card__title">
+                                    挪威
+                                    <span lang="en">Norway</span>
+                                </h2>
+
+                                <p class="destination-card__subtitle">
+                                    峽灣間的綠色簾幕
+                                </p>
+
+                                <p class="destination-card__desc">
+                                    從特羅姆瑟出海追極光，
+                                    冷冽峽灣倒映著滿天星斗與極光光帶。
+                                </p>
+
+                                <div class="destination-card__footer">
+                                    <p class="destination-card__price">
+                                        <span>起價</span>
+                                        <strong>NT$ 152,000</strong>
+                                    </p>
+
+                                    <span class="destination-card__action">
+                                        探索行程
+                                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- 瑞典 -->
+                    <article class="destination-card">
+                        <a class="destination-card__link" href="destinations-sweden.html" aria-label="探索瑞典極光行程">
+                            <figure class="destination-card__media">
+                                <img class="destination-card__image" src="images/destinations/sweden.jpg"
+                                    alt="瑞典阿比斯庫國家公園的極光夜空" width="900" height="900" loading="lazy" decoding="async">
+
+                                <span class="tag destination-card__tag destination-card__tag--tertiary">
+                                    秘境之選
+                                </span>
+                            </figure>
+
+                            <div class="destination-card__content">
+                                <div class="destination-card__meta">
+                                    <span class="destination-card__line"></span>
+
+                                    <span>
+                                        8 個行程
+                                    </span>
+                                </div>
+
+                                <h2 class="destination-card__title">
+                                    瑞典
+                                    <span lang="en">Sweden</span>
+                                </h2>
+
+                                <p class="destination-card__subtitle">
+                                    阿比斯庫的極光心臟
+                                </p>
+
+                                <p class="destination-card__desc">
+                                    在阿比斯庫國家公園避開光害，
+                                    是全球公認最容易看到極光的秘境。
+                                </p>
+
+                                <div class="destination-card__footer">
+                                    <p class="destination-card__price">
+                                        <span>起價</span>
+                                        <strong>NT$ 138,000</strong>
+                                    </p>
+
+                                    <span class="destination-card__action">
+                                        探索行程
+                                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
 
 
+
+    </main>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -288,4 +518,5 @@
 
 
 </body>
+
 </html>

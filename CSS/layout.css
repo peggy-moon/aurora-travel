@@ -142,6 +142,13 @@
         flex-direction: column;
         gap: var(--space-6);
     }
+
+    .split > .flex-1,
+    .split > .flex-2,
+    .split > .flex-3 {
+        flex: none;
+        width: 100%;
+    }
 }
 
 /* RWD：平板（≤1024px） */
