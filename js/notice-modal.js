@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             color: "primary",
             title: "訂閱成功",
             description:
-                "謝謝你的訂閱！最新的極光消息與精選行程，將會寄送到你的電子信箱。",
-            confirmText: "好的"
+                "感謝你的體驗！本網站目前為前端作品集展示用途，電子報訂閱功能僅作互動示意，不會實際儲存或寄送資料。",
+            confirmText: "我知道了"
         },
 
         privacy: {

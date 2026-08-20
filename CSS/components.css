@@ -201,7 +201,7 @@
 .tag {
     display: inline-flex;
     padding: var(--space-2) var(--space-4);
-    min-height: 24px;
+    min-height: 20px;
 
     font-size: var(--text-sm);
     font-weight: var(--fw-medium);
@@ -216,15 +216,15 @@
 }
 
 /* 淡底 */
-.tag--primary--soft {
+.tag--primary-soft {
     background: var(--color-primary-soft);
 }
 
-.tag--secondary--soft {
+.tag--secondary-soft {
     background: var(--color-secondary-soft);
 }
 
-.tag--tertiary--soft {
+.tag--tertiary-soft {
     background: var(--color-tertiary-soft);
 }
 
@@ -242,19 +242,19 @@
 }
 
 /* 透明底+外框 */
-.tag--primary--outline {
+.tag--primary-outline {
     border: 1px solid var(--color-primary);
     background: transparent;
     color: var(--color-primary);
 }
 
-.tag--secondary--outline {
+.tag--secondary-outline {
     border: 1px solid var(--color-secondary);
     background: transparent;
     color: var(--color-secondary);
 }
 
-.tag--tertiary--outline {
+.tag--tertiary-outline {
     border: 1px solid var(--color-tertiary);
     background: transparent;
     color: var(--color-tertiary);
@@ -463,14 +463,16 @@
     background: rgba(7, 17, 31, 0.78);
     color: var(--text-primary);
 
+    font-family: var(--font-display);
     font-size: var(--text-sm);
     font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wider);
 
     backdrop-filter: blur(var(--glass-blur-sm));
     -webkit-backdrop-filter: blur(var(--glass-blur-sm));
 }
 
-.tour-card__rating i {
+.tour-card__rating-star {
     color: var(--color-warning);
 }
 
@@ -1088,11 +1090,10 @@
     background: var(--color-bg);
     color: var(--text-primary);
 
+    font-family: var(--font-display);
     font-size: var(--text-sm);
-}
-
-.testimonial__rating i {
-    color: var(--color-warning);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wider);
 }
 
 .testimonial__rating span {

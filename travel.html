@@ -27,10 +27,19 @@
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/travel.css" rel="stylesheet">
 
     <!-- Header 滾動效果 -->
     <script src="JS/header.js" defer></script>
+
+    <!-- 行程資料 -->
+    <script src="JS/travel-data.js" defer></script>
+
+    <!-- 行程功能 -->
+    <script src="JS/travel.js" defer></script>
+
+    <!-- 行程篩選 -->
+    <script src="JS/travel-filter.js" defer></script>
 
     <!-- 通用通知框 -->
     <script src="JS/notice-modal.js" defer></script>
@@ -62,10 +71,10 @@
                     <img src="images/logo.png" alt="Aurora Travel">
                 </a>
                 <ul class="site-nav__list">
-                    <li><a href="index.html" class="site-nav__link" aria-current="page">首頁</a></li>
+                    <li><a href="index.html" class="site-nav__link">首頁</a></li>
                     <li><a href="about.html" class="site-nav__link">關於我們</a></li>
                     <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
-                    <li><a href="travel.html" class="site-nav__link is-active">行程清單</a></li>
+                    <li><a href="travel.html" class="site-nav__link is-active" aria-current="page">行程清單</a></li>
                     <li><a href="news.html" class="site-nav__link">最新消息</a></li>
                     <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
                     <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
@@ -119,26 +128,222 @@
             </a>
         </div>
     </header>
-
-    <section class="page-hero page-hero--travel">
-        <div class="container page-hero__inner">
-            <div class="page-hero__content">
-                <p class="page-hero__eyebrow" lang="en">
-                    CURATED JOURNEYS
-                </p>
-                <h1 class="page-hero__title">
-                    找到屬於你的
-                    <br>
-                    極光旅程
-                </h1>
-                <p class="page-hero__desc">
-                    從入門到挑戰、從 5 天到 12 天，我們為每種旅行風格準備了精心策劃的極光行程。
-                </p>
+    <main>
+        <section class="page-hero page-hero--travel">
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <p class="page-hero__eyebrow" lang="en">
+                        CURATED JOURNEYS
+                    </p>
+                    <h1 class="page-hero__title">
+                        找到屬於你的
+                        <br>
+                        極光旅程
+                    </h1>
+                    <p class="page-hero__desc">
+                        從入門到進階、從 5 天到 12 天，我們為每種旅行風格準備了精心策劃的極光行程。
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- 行程搜尋與篩選 -->
+        <section class="tour-toolbar">
+            <div class="container">
 
+                <div class="tour-toolbar__main">
+
+                    <!-- 搜尋 -->
+                    <div class="tour-search">
+                        <i class="ti ti-search" aria-hidden="true"></i>
+
+                        <label class="sr-only" for="tour-search">
+                            搜尋行程
+                        </label>
+
+                        <input class="tour-search__input" id="tour-search" type="search" placeholder="搜尋行程名稱、關鍵字…"
+                            autocomplete="off">
+                    </div>
+
+                    <!-- 篩選 -->
+                    <div class="tour-filters">
+
+                        <!-- 國家 -->
+                        <div class="tour-dropdown" data-dropdown data-filter="country">
+                            <button class="tour-dropdown__trigger" type="button" aria-expanded="false">
+
+                                <span class="tour-dropdown__label">
+                                    <i class="ti ti-world" aria-hidden="true"></i>
+
+                                    <span data-dropdown-label>
+                                        全部國家
+                                    </span>
+                                </span>
+
+                                <i class="ti ti-chevron-down tour-dropdown__arrow" aria-hidden="true">
+                                </i>
+                            </button>
+
+                            <div class="tour-dropdown__menu">
+                                <button class="tour-dropdown__option is-active" type="button" data-value="all">
+                                    全部國家
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="iceland">
+                                    冰島
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="finland">
+                                    芬蘭
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="norway">
+                                    挪威
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="sweden">
+                                    瑞典
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 天數 -->
+                        <div class="tour-dropdown" data-dropdown data-filter="days">
+                            <button class="tour-dropdown__trigger" type="button" aria-expanded="false">
+
+                                <span class="tour-dropdown__label">
+                                    <i class="ti ti-calendar" aria-hidden="true"></i>
+
+                                    <span data-dropdown-label>
+                                        全部天數
+                                    </span>
+                                </span>
+
+                                <i class="ti ti-chevron-down tour-dropdown__arrow" aria-hidden="true">
+                                </i>
+                            </button>
+
+                            <div class="tour-dropdown__menu">
+                                <button class="tour-dropdown__option is-active" type="button" data-value="all">
+                                    全部天數
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="5-6">
+                                    5～6 天
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="7-9">
+                                    7～9 天
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="10-plus">
+                                    10 天以上
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 難度 -->
+                        <div class="tour-dropdown" data-dropdown data-filter="difficulty">
+                            <button class="tour-dropdown__trigger" type="button" aria-expanded="false">
+
+                                <span class="tour-dropdown__label">
+                                    <i class="ti ti-gauge" aria-hidden="true"></i>
+
+                                    <span data-dropdown-label>
+                                        全部難度
+                                    </span>
+                                </span>
+
+                                <i class="ti ti-chevron-down tour-dropdown__arrow" aria-hidden="true">
+                                </i>
+                            </button>
+
+                            <div class="tour-dropdown__menu">
+                                <button class="tour-dropdown__option is-active" type="button" data-value="all">
+                                    全部難度
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="easy">
+                                    入門
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="medium">
+                                    中等
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="advanced">
+                                    進階
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 排序 -->
+                        <div class="tour-dropdown" data-dropdown data-filter="sort">
+                            <button class="tour-dropdown__trigger" type="button" aria-expanded="false">
+
+                                <span class="tour-dropdown__label">
+                                    <i class="ti ti-arrows-sort" aria-hidden="true"></i>
+
+                                    <span data-dropdown-label>
+                                        精選推薦
+                                    </span>
+                                </span>
+
+                                <i class="ti ti-chevron-down tour-dropdown__arrow" aria-hidden="true"></i>
+                            </button>
+
+                            <div class="tour-dropdown__menu">
+
+                                <button class="tour-dropdown__option is-active" type="button" data-value="featured">
+                                    精選推薦
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="price-asc">
+                                    價格由低到高
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="price-desc">
+                                    價格由高到低
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="rating-desc">
+                                    評分最高
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="reviews-desc">
+                                    最多評價
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="days-asc">
+                                    天數由少到多
+                                </button>
+
+                                <button class="tour-dropdown__option" type="button" data-value="days-desc">
+                                    天數由多到少
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="tour-toolbar__count">
+                    共 <strong data-role="tour-count">12</strong> 個行程
+                </p>
+
+            </div>
+        </section>
+
+        <!-- 行程清單 -->
+        <section class="tour-list section-lg">
+            <div class="container">
+
+                <div class="tour-list__grid" data-role="tour-list">
+                </div>
+
+            </div>
+        </section>
+    </main>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -283,8 +488,6 @@
             </button>
         </div>
     </div>
-
-
-
 </body>
+
 </html>
