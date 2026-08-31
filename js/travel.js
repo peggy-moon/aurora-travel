@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         '[data-role="tour-count"]'
     );
 
+    const tourSearch = document.querySelector(
+        "#tour-search"
+    );
+
     // 如果目前頁面沒有行程清單，就停止執行
     if (!tourList) return;
 
@@ -26,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedDays = "all";
     let selectedDifficulty = "all";
     let selectedSort = "featured";
+
+    // 目前搜尋關鍵字
+    let searchKeyword = "";
 
     function formatPrice(price) {
         return `NT$ ${price.toLocaleString("zh-TW")}`;
@@ -80,6 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
             <article class="card card--media card--hover travel-card">
+
+                <a
+                href="travel-detail.html?id=${tour.id}"
+                class="travel-card__stretched-link"
+                aria-label="查看${tour.title}詳細行程">
+                </a>
 
                 <!-- 圖片區 -->
                 <div class="card__media travel-card__media">
@@ -154,16 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             </p>
                         </div>
 
-                        <a
-                            href="#"
+                        <span
                             class="icon-btn icon-btn--primary travel-card__link"
-                            aria-label="查看${tour.title}">
+                            aria-hidden="true">
 
-                            <i
-                                class="ti ti-arrow-right"
-                                aria-hidden="true">
-                            </i>
-                        </a>
+                            <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                        </span>
 
                     </div>
 
@@ -187,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </h2>
     
                 <p class="tour-empty__desc">
-                    試著調整國家、天數或難度，
+                    試著調整搜尋關鍵字、國家、天數或難度，
                     找找其他適合你的旅程。
                 </p>
     
@@ -225,64 +234,100 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function matchesDays(tour, selectedDays) {
+    function matchesDays(tour, dayRange) {
 
-        if (selectedDays === "all") {
+        if (dayRange === "all") {
             return true;
         }
 
-        if (selectedDays === "5-6") {
+        if (dayRange === "5-6") {
             return tour.days >= 5 && tour.days <= 6;
         }
 
-        if (selectedDays === "7-9") {
+        if (dayRange === "7-9") {
             return tour.days >= 7 && tour.days <= 9;
         }
 
-        if (selectedDays === "10-plus") {
+        if (dayRange === "10-plus") {
             return tour.days >= 10;
         }
 
         return true;
     }
 
+    function matchesSearch(tour, keyword) {
+
+        // 沒輸入關鍵字 → 全部符合
+        if (!keyword) {
+            return true;
+        }
+
+        const searchableText = [
+            tour.title,
+            tour.description,
+            tour.countryName,
+            tour.difficultyName,
+            ...tour.tags
+        ]
+            .join(" ")
+            .toLowerCase();
+
+
+        return searchableText.includes(
+            keyword.toLowerCase()
+        );
+    }
+
     function sortTours(tours, sortType) {
 
         const sortedTours = [...tours];
 
+        switch (sortType) {
 
-        if (sortType === "price-asc") {
-            sortedTours.sort((a, b) => a.price - b.price);
+            case "price-asc":
+                sortedTours.sort(
+                    (a, b) => a.price - b.price
+                );
+                break;
+
+            case "price-desc":
+                sortedTours.sort(
+                    (a, b) => b.price - a.price
+                );
+                break;
+
+            case "rating-desc":
+                sortedTours.sort(
+                    (a, b) => b.rating - a.rating
+                );
+                break;
+
+            case "reviews-desc":
+                sortedTours.sort(
+                    (a, b) => b.reviews - a.reviews
+                );
+                break;
+
+            case "days-asc":
+                sortedTours.sort(
+                    (a, b) => a.days - b.days
+                );
+                break;
+
+            case "days-desc":
+                sortedTours.sort(
+                    (a, b) => b.days - a.days
+                );
+                break;
+
+            case "featured":
+                sortedTours.sort(
+                    (a, b) =>
+                        Number(b.featured) -
+                        Number(a.featured)
+                );
+                break;
         }
-
-        if (sortType === "price-desc") {
-            sortedTours.sort((a, b) => b.price - a.price);
-        }
-
-        if (sortType === "rating-desc") {
-            sortedTours.sort((a, b) => b.rating - a.rating);
-        }
-
-        if (sortType === "reviews-desc") {
-            sortedTours.sort((a, b) => b.reviews - a.reviews);
-        }
-
-        if (sortType === "days-asc") {
-            sortedTours.sort((a, b) => a.days - b.days);
-        }
-
-        if (sortType === "days-desc") {
-            sortedTours.sort((a, b) => b.days - a.days);
-        }
-
-        if (sortType === "featured") {
-
-            sortedTours.sort((a, b) => {
-                return Number(b.featured) - Number(a.featured);
-            });
-
-        }
-
 
         return sortedTours;
     }
@@ -303,10 +348,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectedDifficulty === "all" ||
                     tour.difficulty === selectedDifficulty;
 
+                const matchesKeyword =
+                    matchesSearch(tour, searchKeyword);
+
                 return (
                     matchesCountry &&
                     matchesDuration &&
-                    matchesDifficulty
+                    matchesDifficulty &&
+                    matchesKeyword
                 );
 
             });
@@ -323,9 +372,16 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedCountry = "all";
         selectedDays = "all";
         selectedDifficulty = "all";
+        searchKeyword = "";
 
 
-        // 2. 重設所有 Dropdown 畫面
+        // 2. 清空搜尋框
+        if (tourSearch) {
+            tourSearch.value = "";
+        }
+
+
+        // 3. 重設所有 Dropdown 畫面
         const filterDropdowns =
             document.querySelectorAll(
                 '[data-filter]:not([data-filter="sort"])'
@@ -368,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // 3. 重新顯示全部行程
+        // 4. 重新顯示全部行程
         applyFilters();
 
     }
@@ -387,6 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    // Dropdown 篩選與排序
     document.addEventListener(
         "tour-filter-change",
         (event) => {
@@ -415,6 +472,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
+
+    // 搜尋行程
+    if (tourSearch) {
+
+        tourSearch.addEventListener("input", () => {
+
+            searchKeyword =
+                tourSearch.value.trim();
+
+            applyFilters();
+
+        });
+
+    }
 
     // 第一次載入時套用預設篩選與排序
     applyFilters();

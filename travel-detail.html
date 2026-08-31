@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>詳細行程｜極光旅行 Aurora Travel</title>
+    <link rel="icon" href="images/logo-icon.png" type="image/x-icon">
+
+    <!-- Google Font(下面這兩句意思是:等等要去 Google Fonts 拿東西，先幫我建立連線吧～) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 思源黑體、Marcellus、日本明朝體、思源宋體 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Marcellus&family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+
+    <link href="CSS/tokens.css" rel="stylesheet">
+    <link href="CSS/base.css" rel="stylesheet">
+    <link href="CSS/typography.css" rel="stylesheet">
+    <link href="CSS/layout.css" rel="stylesheet">
+    <link href="CSS/header.css" rel="stylesheet">
+    <link href="CSS/components.css" rel="stylesheet">
+    <link href="CSS/utilities.css" rel="stylesheet">
+    <link href="CSS/footer.css" rel="stylesheet">
+    <link href="CSS/travel.css" rel="stylesheet">
+    <link href="CSS/travel-detail.css" rel="stylesheet">
+
+    <!-- Header 滾動效果 -->
+    <script src="JS/header.js" defer></script>
+
+    <!-- 行程資料 -->
+    <script src="JS/travel-data.js" defer></script>
+
+    <!-- 詳細頁 -->
+    <script src="JS/travel-detail.js" defer></script>
+
+    <!-- 通用通知框 -->
+    <script src="JS/notice-modal.js" defer></script>
+
+    <!-- 有這句在電腦上預覽手機版網頁才能正常顯示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header__container">
+            <a href="index.html" class="site-header__logo" aria-label="Aurora Travel 首頁">
+                <img src="images/logo.png" alt="Aurora Travel">
+            </a>
+
+            <!-- 手機版選單按鈕 -->
+            <button class="site-nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false"
+                aria-controls="site-nav">
+                <span class="site-nav-toggle__line"></span>
+                <span class="site-nav-toggle__line"></span>
+                <span class="site-nav-toggle__line"></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <a href="index.html" class="site-nav__brand">
+                    <img src="images/logo.png" alt="Aurora Travel">
+                </a>
+                <ul class="site-nav__list">
+                    <li><a href="index.html" class="site-nav__link">首頁</a></li>
+                    <li><a href="about.html" class="site-nav__link">關於我們</a></li>
+                    <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
+                    <li><a href="travel.html" class="site-nav__link is-active">行程清單</a></li>
+                    <li><a href="news.html" class="site-nav__link">最新消息</a></li>
+                    <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
+                    <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
+                </ul>
+
+                <div class="site-nav__mobile-extra">
+                    <div class="site-nav__service">
+                        <p class="site-nav__extra-label">
+                            CUSTOMER SERVICE
+                        </p>
+                        <div class="site-nav__service-content">
+                            <div>
+                                <p class="site-nav__service-title">
+                                    客服時間
+                                </p>
+                                <p class="site-nav__service-time">
+                                    週一至週五 09:00－18:00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-nav__social">
+                        <p class="site-nav__extra-label">
+                            FOLLOW AURORA
+                        </p>
+                        <div class="site-nav__social-list">
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="Instagram" aria-label="Aurora Travel Instagram 籌備中">
+                                <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="YouTube" aria-label="Aurora Travel YouTube 籌備中">
+                                <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="site-nav__social-link notice-trigger" data-notice-type="social"
+                                data-platform="Facebook" aria-label="Aurora Travel Facebook 籌備中">
+                                <i class="ti ti-brand-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary site-nav__contact-btn">
+                        聯絡我們
+                        <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </nav>
+            <!-- 預約按鈕 -->
+            <a href="contact.html" class="site-header__cta">
+                預約諮詢
+                <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 行程詳細 Hero -->
+        <section class="travel-detail-hero">
+
+            <img class="travel-detail-hero__image" data-role="detail-hero-image" src="" alt="">
+
+            <div class="travel-detail-hero__overlay"></div>
+
+            <div class="container travel-detail-hero__inner">
+
+                <div class="travel-detail-hero__content">
+
+                    <p class="travel-detail-hero__country">
+                        <i class="ti ti-map-pin" aria-hidden="true">
+                        </i>
+
+                        <span data-role="detail-country"></span>
+                    </p>
+
+                    <h1 class="travel-detail-hero__title" data-role="detail-title">
+                    </h1>
+
+                    <p class="travel-detail-hero__desc" data-role="detail-desc">
+                    </p>
+
+
+                    <!-- Meta -->
+                    <div class="travel-detail-hero__meta">
+
+                        <span class="travel-detail-hero__rating">
+                            <span aria-hidden="true">★</span>
+
+                            <strong data-role="detail-rating">
+                            </strong>
+
+                            <span>
+                                (
+                                <span data-role="detail-reviews"></span>
+                                則評價
+                                )
+                            </span>
+                        </span>
+
+
+                        <span>
+                            <i class="ti ti-clock" aria-hidden="true">
+                            </i>
+
+                            <span data-role="detail-duration"></span>
+                        </span>
+
+
+                        <span>
+                            <i class="ti ti-users" aria-hidden="true">
+                            </i>
+
+                            <span data-role="detail-group-size"></span>
+                        </span>
+
+
+                        <span class="tag tag--primary-soft tag--text-primary" data-role="detail-difficulty">
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 行程快速資訊 -->
+        <section class="travel-detail-info">
+            <div class="container travel-detail-info__inner">
+
+                <div class="travel-detail-info__meta">
+
+                    <div class="travel-detail-info__item">
+                        <i class="ti ti-calendar" aria-hidden="true"></i>
+
+                        <span>
+                            最佳季節：
+                            <strong data-role="detail-best-season"></strong>
+                        </span>
+                    </div>
+
+                    <div class="travel-detail-info__item">
+                        <i class="ti ti-users" aria-hidden="true"></i>
+
+                        <strong data-role="detail-info-group-size"></strong>
+                    </div>
+
+                </div>
+
+
+                <div class="travel-detail-info__price">
+                    <span>每人費用</span>
+
+                    <strong data-role="detail-price"></strong>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 行程概述 -->
+        <section class="travel-overview section-lg">
+            <div class="container">
+
+                <div class="travel-overview__inner">
+
+                    <div class="travel-overview__heading">
+                        <span class="travel-overview__line" aria-hidden="true"></span>
+
+                        <div>
+                            <p class="section-header__eyebrow" lang="en">
+                                OVERVIEW
+                            </p>
+
+                            <h2 class="section-header__title">
+                                行程概述
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <div class="travel-overview__content">
+
+                        <p class="travel-overview__desc" data-role="detail-overview">
+                        </p>
+
+                        <p class="travel-overview__note" data-role="detail-overview-note">
+
+                            <i class="ti ti-info-circle" aria-hidden="true">
+                            </i>
+
+                            <span></span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 精彩畫面 -->
+        <section class="travel-gallery section-lg">
+            <div class="container">
+
+                <div class="section-header section-header--center">
+
+                    <p class="section-header__eyebrow" lang="en">
+                        GALLERY
+                    </p>
+
+                    <h2 class="section-header__title">
+                        精彩畫面
+                    </h2>
+
+                </div>
+
+                <div class="travel-gallery__grid" data-role="detail-gallery">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 每日行程 -->
+        <section class="travel-itinerary section-lg">
+            <div class="container">
+
+                <div class="section-header section-header--center">
+                    <p class="section-header__eyebrow" lang="en">
+                        DAY BY DAY
+                    </p>
+
+                    <h2 class="section-header__title">
+                        每日行程
+                    </h2>
+
+                    <p class="section-header__desc">
+                        點擊每一天展開詳細內容
+                    </p>
+                </div>
+
+                <div class="travel-itinerary__list" data-role="detail-itinerary">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 費用包含與不包含 -->
+        <section class="travel-includes section-lg">
+            <div class="container">
+
+                <div class="section-header section-header--center">
+
+                    <p class="section-header__eyebrow" lang="en">
+                        WHAT'S INCLUDED
+                    </p>
+
+                    <h2 class="section-header__title">
+                        費用包含與不包含
+                    </h2>
+
+                </div>
+
+                <div class="travel-includes__grid">
+
+                    <!-- 費用包含 -->
+                    <article class="travel-includes__card">
+
+                        <div class="travel-includes__card-header">
+                            <i class="ti ti-circle-check" aria-hidden="true">
+                            </i>
+
+                            <h3 class="travel-includes__title">
+                                費用包含
+                            </h3>
+                        </div>
+
+                        <ul class="travel-includes__list" data-role="detail-included">
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 費用不包含 -->
+                    <article class="travel-includes__card">
+
+                        <div class="travel-includes__card-header">
+                            <i class="ti ti-circle-x" aria-hidden="true">
+                            </i>
+
+                            <h3 class="travel-includes__title">
+                                費用不包含
+                            </h3>
+                        </div>
+
+                        <ul class="travel-includes__list" data-role="detail-excluded">
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Travel Booking -->
+        <section class="travel-booking section-lg">
+            <div class="container">
+
+                <div class="travel-booking__grid">
+
+                    <!-- 左側：預訂資訊 -->
+                    <div class="travel-booking__content">
+
+                        <h2 class="travel-booking__title">
+                            準備好出發了嗎？
+                        </h2>
+
+                        <p class="travel-booking__desc" data-role="booking-description">
+                        </p>
+
+                        <div class="travel-booking__info">
+
+                            <!-- 集合地點 -->
+                            <div class="travel-booking__info-item">
+
+                                <div class="travel-booking__icon">
+                                    <i class="ti ti-map-pin" aria-hidden="true">
+                                    </i>
+                                </div>
+
+                                <div>
+                                    <p class="travel-booking__label">
+                                        集合地點
+                                    </p>
+
+                                    <p data-role="booking-meeting-point"></p>
+                                </div>
+
+                            </div>
+
+                            <!-- 集合時間 -->
+                            <div class="travel-booking__info-item">
+
+                                <div class="travel-booking__icon">
+                                    <i class="ti ti-clock" aria-hidden="true">
+                                    </i>
+                                </div>
+
+                                <div>
+                                    <p class="travel-booking__label">
+                                        集合時間
+                                    </p>
+
+                                    <p data-role="booking-meeting-time"></p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="travel-booking__actions">
+
+                            <a href="contact.html" class="btn btn-primary">
+
+                                <span data-role="booking-button">
+                                    預訂此行程
+                                </span>
+
+                                <i class="ti ti-arrow-up-right" aria-hidden="true">
+                                </i>
+
+                            </a>
+
+                            <p class="travel-booking__contact">
+                                或來電
+                                <a href="tel:0225258888">
+                                    02-2525-8888
+                                </a>
+                                立即諮詢
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 右側：行前須知 -->
+                    <aside class="travel-booking__notice">
+
+                        <div class="travel-booking__notice-header">
+
+                            <i class="ti ti-info-circle" aria-hidden="true">
+                            </i>
+
+                            <h3>行前須知</h3>
+
+                        </div>
+
+                        <ul class="travel-booking__notice-list" data-role="booking-notices">
+                        </ul>
+
+                        <div class="travel-booking__price">
+
+                            <span>行程費用</span>
+
+                            <strong data-role="booking-price"></strong>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__main">
+                <!-- 品牌與電子報 -->
+                <div class="site-footer__brand">
+                    <a href="index.html" class="site-footer__logo" aria-label="Aurora Travel 首頁">
+                        <img src="images/logo.png" alt="Aurora Travel">
+                    </a>
+                    <p class="site-footer__desc">
+                        我們相信旅行不只是移動，更是一種心靈的靠近。
+                        Aurora Travel 帶你走進北歐最深邃的極夜，
+                        看見一生一次的極光時刻。
+                    </p>
+                    <form class="site-footer__newsletter" id="newsletter-form">
+                        <label class="site-footer__newsletter-label" for="footer-email">
+                            訂閱極光通訊
+                        </label>
+                        <div class="input-group site-footer__newsletter-group">
+                            <input class="input" id="footer-email" name="email" type="email" placeholder="輸入你的電子郵件"
+                                autocomplete="email" required>
+
+                            <button class="btn btn-primary btn--sm" type="submit">
+                                訂閱
+                                <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 旅程 -->
+                <nav class="site-footer__column" aria-label="頁尾旅程導覽">
+                    <h2 class="site-footer__title">
+                        快速連結
+                    </h2>
+
+                    <ul class="site-footer__list">
+                        <li><a href="about.html">關於我們</a></li>
+                        <li><a href="destinations.html">目的地</a></li>
+                        <li><a href="travel.html">行程清單</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="contact.html">聯絡我們</a></li>
+                        <li><a href="faq.html">常見問題</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 社群 -->
+                <div class="site-footer__column">
+                    <h2 class="site-footer__title">
+                        追蹤我們
+                    </h2>
+                    <ul class="site-footer__list site-footer__socials">
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="Instagram">
+                                <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="YouTube">
+                                <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+                                YouTube
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="notice-trigger" data-notice-type="social" data-platform="Facebook">
+                                <i class="ti ti-brand-facebook" aria-hidden="true"></i>
+                                Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 聯絡資訊 -->
+                <address class="site-footer__column">
+                    <h2 class="site-footer__title">
+                        聯絡
+                    </h2>
+                    <ul class="site-footer__list site-footer__contact">
+                        <li>
+                            <i class="ti ti-map-pin" aria-hidden="true"></i>
+                            <span>
+                                台北市信義區松高路 68 號 12F
+                            </span>
+                        </li>
+                        <li>
+                            <i class="ti ti-phone" aria-hidden="true"></i>
+                            <a href="tel:+886287886688">
+                                +886 2 8788 6688
+                            </a>
+                        </li>
+                        <li>
+                            <i class="ti ti-mail" aria-hidden="true"></i>
+                            <a href="mailto:hello@aurora-travel.com">
+                                hello@aurora-travel.com
+                            </a>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+            <div class="site-footer__bottom">
+                <p>
+                    Aurora Travel 為作品集展示專案，所有內容皆為設計示意。
+                </p>
+                <nav class="site-footer__legal" aria-label="法律資訊">
+                    <a href="#" class="notice-trigger" data-notice-type="privacy">
+                        隱私權政策
+                    </a>
+                    <a href="#" class="notice-trigger" data-notice-type="terms">
+                        服務條款
+                    </a>
+                    <button type="button" class="notice-trigger" data-notice-type="cookies">
+                        Cookie 設定
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <p class="site-footer__watermark" aria-hidden="true">
+            Aurora Travel
+        </p>
+    </footer>
+
+    <!-- 通用通知框 -->
+    <div class="notice-modal" id="notice-modal" aria-hidden="true">
+        <div class="notice-modal__overlay"></div>
+        <div class="notice-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="notice-modal-title"
+            aria-describedby="notice-modal-desc">
+            <button class="notice-modal__close" type="button" aria-label="關閉通知">
+                <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+            <div class="notice-modal__icon">
+                <i class="ti ti-info-circle" data-role="notice-icon" aria-hidden="true"></i>
+            </div>
+            <h2 class="notice-modal__title" id="notice-modal-title" data-role="notice-title">
+                通知
+            </h2>
+            <p class="notice-modal__desc" id="notice-modal-desc" data-role="notice-desc">
+                這是一則通知。
+            </p>
+            <button class="btn btn-primary notice-modal__confirm" type="button" data-role="notice-confirm">
+                我知道了
+            </button>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

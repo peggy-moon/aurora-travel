@@ -1206,7 +1206,7 @@
 }
 
 .page-hero__content {
-    max-width: 720px;
+    max-width: 920px;
 
     padding-block: clamp(var(--space-16),
             10vw,

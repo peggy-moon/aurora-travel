@@ -1,0 +1,889 @@
+/* Travel Detail Hero */
+.travel-detail-hero {
+    position: relative;
+
+    min-height: clamp(620px, 72vh, 760px);
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background: var(--color-bg);
+}
+
+.travel-detail-hero__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+.travel-detail-hero__overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(180deg,
+            rgba(4, 15, 25, 0.12) 0%,
+            rgba(4, 15, 25, 0.22) 38%,
+            rgba(4, 15, 25, 0.88) 100%);
+}
+
+.travel-detail-hero__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding-bottom: var(--space-12);
+}
+
+.travel-detail-hero__content {
+    max-width: 980px;
+}
+
+.travel-detail-hero__country {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-4);
+
+    color: var(--text-primary);
+
+    font-size: var(--text-sm);
+    font-weight: var(--fw-medium);
+}
+
+.travel-detail-hero__country i {
+    color: var(--color-primary);
+}
+
+.travel-detail-hero__title {
+    margin-bottom: var(--space-4);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-tight);
+}
+
+.travel-detail-hero__desc {
+    max-width: 860px;
+
+    margin-bottom: var(--space-6);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-base);
+    line-height: var(--lh-loose);
+}
+
+.travel-detail-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+}
+
+.travel-detail-hero__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    padding:
+        var(--space-2) var(--space-4);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-warning);
+    color: var(--text-primary);
+
+    font-weight: var(--fw-medium);
+}
+
+.travel-detail-hero__rating>span:first-child {
+    color: var(--text-primary);
+}
+
+.travel-detail-hero__rating strong {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+}
+
+.travel-detail-hero__meta>span:not(.travel-detail-hero__rating,
+    .tag) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.travel-detail-hero__meta i {
+    color: var(--text-muted);
+}
+
+/* 行程快速資訊 Travel Detail Info */
+.travel-detail-info {
+    border-bottom: var(--border-w) solid var(--color-border);
+
+    background: var(--color-bg-secondary);
+}
+
+.travel-detail-info__inner {
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+}
+
+/* 左側資訊 */
+.travel-detail-info__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+}
+
+.travel-detail-info__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+}
+
+.travel-detail-info__item i {
+    color: var(--text-muted);
+}
+
+.travel-detail-info__item strong {
+    color: var(--text-primary);
+
+    font-weight: var(--fw-medium);
+}
+
+/* 價格 */
+.travel-detail-info__price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+
+    white-space: nowrap;
+}
+
+.travel-detail-info__price span {
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+.travel-detail-info__price strong {
+    color: var(--text-primary);
+
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--fw-regular);
+}
+
+/* 行程概述 Travel Overview */
+.travel-overview {
+    background: var(--color-bg);
+}
+
+.travel-overview__inner {
+    max-width: 960px;
+    margin-inline: auto;
+}
+
+.travel-overview__heading {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-6);
+}
+
+.travel-overview__line {
+    width: 60px;
+    height: 1px;
+
+    margin-top: 0.8rem;
+
+    background: var(--color-primary);
+}
+
+.travel-overview__content {
+    padding-left: calc(60px + var(--space-5));
+}
+
+.travel-overview__desc {
+    color: var(--text-primary);
+
+    font-size: var(--text-base);
+    line-height: var(--lh-loose);
+}
+
+.travel-overview__note {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    margin-top: var(--space-6);
+
+    padding:
+        var(--space-2) var(--space-4);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-primary-soft);
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+}
+
+.travel-overview__note i {
+    color: var(--color-warning);
+}
+
+/* 精彩畫面 Travel Gallery */
+.travel-gallery {
+    background: var(--color-bg-secondary);
+}
+
+.travel-gallery .section-header {
+    margin-bottom: var(--space-8);
+}
+
+/* Gallery Grid */
+.travel-gallery__grid {
+    max-width: 960px;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-4);
+}
+
+/* 圖片 */
+.travel-gallery__item {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+}
+
+.travel-gallery__item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.travel-gallery__caption {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: var(--space-5);
+
+    background: linear-gradient(to top,
+            rgba(2, 20, 32, 0.75) 0%,
+            rgba(2, 20, 32, 0.2) 45%,
+            transparent 70%);
+
+    color: var(--color-white);
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+.travel-gallery__caption-title,
+.travel-gallery__caption-text {
+    transform: translateY(8px);
+
+    transition: transform 0.35s ease;
+}
+
+.travel-gallery__item:hover .travel-gallery__caption {
+    opacity: 1;
+}
+
+.travel-gallery__item:hover .travel-gallery__caption-title,
+.travel-gallery__item:hover .travel-gallery__caption-text {
+    transform: translateY(0);
+}
+
+.travel-gallery__caption-title {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+}
+
+.travel-gallery__caption-text {
+    margin: var(--space-1) 0 0;
+
+    font-size: var(--text-sm);
+
+    opacity: 0.8;
+}
+
+/* 第一張跨滿三欄 */
+.travel-gallery__item--large {
+    grid-column: 1 / -1;
+
+    aspect-ratio: 16 / 9;
+}
+
+/* 每日行程 Travel Itinerary */
+.travel-itinerary {
+    background: var(--color-bg);
+}
+
+.travel-itinerary__list {
+    --itinerary-dot-size: 64px;
+
+    max-width: 960px;
+    margin-inline: auto;
+
+    position: relative;
+}
+
+.travel-itinerary__item {
+    position: relative;
+}
+
+.travel-itinerary__list::before {
+    content: "";
+
+    position: absolute;
+
+    top: calc(var(--itinerary-dot-size) / 2);
+    bottom: calc(var(--itinerary-dot-size) / 2);
+
+    left: calc(var(--itinerary-dot-size) / 2);
+
+    width: 2px;
+
+    background: var(--color-border);
+
+    transform: translateX(-50%);
+}
+
+.travel-itinerary__trigger {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        var(--itinerary-dot-size) minmax(0, 1fr) auto;
+
+    align-items: center;
+    gap: var(--space-4);
+
+    padding: var(--space-3) 0;
+    border: 0;
+
+    background: transparent;
+    color: var(--text-primary);
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.travel-itinerary__day {
+    position: relative;
+    z-index: 1;
+
+    width: var(--itinerary-dot-size);
+    height: var(--itinerary-dot-size);
+
+    display: grid;
+    place-items: center;
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: 50%;
+
+    background: var(--color-bg);
+    color: var(--text-secondary);
+
+    font-family: var(--font-display);
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.travel-itinerary__trigger:hover .travel-itinerary__day {
+    border-color: var(--color-primary);
+}
+
+.travel-itinerary__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+}
+
+.travel-itinerary__meals {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+.travel-itinerary__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    margin-left: calc(68px + var(--space-4));
+
+    overflow: hidden;
+
+    transition: grid-template-rows 0.3s ease;
+}
+
+.travel-itinerary__panel-inner {
+    min-height: 0;
+}
+
+.travel-itinerary__item.is-open .travel-itinerary__panel {
+    grid-template-rows: 1fr;
+}
+
+.travel-itinerary__item.is-open .travel-itinerary__day {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--text-inverse);
+}
+
+.travel-itinerary__item.is-open .travel-itinerary__panel-inner {
+    margin-bottom: var(--space-4);
+
+    padding: var(--space-5);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-bg-secondary);
+}
+
+.travel-itinerary__desc {
+    margin-bottom: var(--space-4);
+
+    color: var(--text-secondary);
+
+    line-height: var(--lh-loose);
+}
+
+.travel-itinerary__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+
+    padding-top: var(--space-4);
+
+    border-top: var(--border-w) solid var(--color-border);
+}
+
+.travel-itinerary__details>div {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+}
+
+.travel-itinerary__details i {
+    color: var(--color-primary);
+}
+
+.travel-itinerary__details span {
+    display: flex;
+    flex-direction: column;
+}
+
+.travel-itinerary__details small {
+    color: var(--text-muted);
+}
+
+/* 費用包含與不包含 Travel Includes */
+.travel-includes {
+    background: var(--color-bg-secondary);
+}
+
+.travel-includes .section-header {
+    margin-bottom: var(--space-8);
+}
+
+.travel-includes__grid {
+    max-width: 1040px;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-6);
+}
+
+.travel-includes__card {
+    padding: var(--space-6);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg);
+}
+
+.travel-includes__card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-5);
+}
+
+.travel-includes__card-header>i {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+}
+
+.travel-includes__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-medium);
+}
+
+.travel-includes__list {
+    display: grid;
+    gap: var(--space-3);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.travel-includes__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+
+    color: var(--text-secondary);
+
+    line-height: var(--lh-relaxed);
+}
+
+.travel-includes__list li i {
+    flex: 0 0 auto;
+
+    margin-top: 0.2em;
+
+    color: var(--color-primary);
+}
+
+/* Travel Booking */
+.travel-booking {
+    background: var(--color-bg-secondary);
+}
+
+.travel-booking__grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.travel-booking__title {
+    margin-bottom: var(--space-4);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: var(--fw-regular);
+}
+
+.travel-booking__desc {
+    max-width: 680px;
+
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
+}
+
+.travel-booking__info {
+    display: grid;
+    gap: var(--space-4);
+
+    margin-top: var(--space-6);
+}
+
+.travel-booking__info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.travel-booking__icon {
+    flex: 0 0 auto;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+
+    font-size: var(--text-lg);
+}
+
+.travel-booking__label {
+    margin-bottom: var(--space-1);
+
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.travel-booking__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+
+    margin-top: var(--space-6);
+}
+
+.travel-booking__contact {
+    color: var(--text-secondary);
+}
+
+.travel-booking__contact a {
+    color: var(--text-primary);
+    font-weight: var(--fw-bold);
+}
+
+.travel-booking__notice {
+    padding: var(--space-6);
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg);
+}
+
+.travel-booking__notice-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-5);
+}
+
+.travel-booking__notice-header i {
+    color: var(--color-accent);
+}
+
+.travel-booking__notice-header h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-medium);
+}
+
+.travel-booking__notice-list {
+    display: grid;
+    gap: var(--space-3);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.travel-booking__notice-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+}
+
+.travel-booking__notice-list i {
+    flex: 0 0 auto;
+
+    margin-top: 0.25em;
+
+    color: var(--color-accent);
+}
+
+.travel-booking__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+
+    border-top: var(--border-w) solid var(--color-border);
+}
+
+.travel-booking__price span {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.travel-booking__price strong {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: var(--fw-regular);
+}
+
+@media (hover: none) {
+
+    .travel-gallery__caption {
+        opacity: 1;
+    }
+
+    .travel-gallery__caption-title,
+    .travel-gallery__caption-text {
+        transform: none;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .travel-detail-hero {
+        min-height: 620px;
+    }
+
+    .travel-detail-hero__inner {
+        padding-bottom: var(--space-10);
+    }
+
+    .travel-detail-hero__content {
+        max-width: 760px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .travel-detail-hero {
+        min-height: 560px;
+    }
+
+    .travel-detail-hero__inner {
+        padding-bottom: var(--space-8);
+    }
+
+    .travel-detail-hero__desc {
+        font-size: var(--text-sm);
+    }
+
+    .travel-detail-hero__meta {
+        gap:
+            var(--space-3) var(--space-4);
+    }
+
+    .travel-detail-info__inner {
+        min-height: auto;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-block: var(--space-5);
+    }
+
+    .travel-overview__heading {
+        gap: var(--space-3);
+    }
+
+    .travel-overview__line {
+        width: 36px;
+    }
+
+    .travel-overview__content {
+        padding-left: 0;
+    }
+
+    .travel-overview__note {
+        width: 100%;
+
+        align-items: flex-start;
+
+        border-radius: var(--radius-lg);
+    }
+
+    .travel-includes__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-booking__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .travel-booking__actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .travel-gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-gallery__item--large {
+        grid-column: auto;
+    }
+
+    .travel-gallery__item,
+    .travel-gallery__item--large {
+        aspect-ratio: 16 / 10;
+    }
+
+    .travel-itinerary__meals {
+        display: none;
+    }
+}
