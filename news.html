@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>極光旅行｜AURORA TRAVEL</title>
+    <title>最新消息｜AURORA TRAVEL</title>
     <link rel="icon" href="images/logo-icon.png" type="image/x-icon">
 
     <!-- Google Font(下面這兩句意思是:等等要去 Google Fonts 拿東西，先幫我建立連線吧～) -->
@@ -27,10 +27,13 @@
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/news.css" rel="stylesheet">
 
     <!-- Header 滾動效果 -->
     <script src="JS/header.js" defer></script>
+
+    <script src="JS/news-data.js" defer></script>
+    <script src="JS/news.js" defer></script>
 
     <!-- 通用通知框 -->
     <script src="JS/notice-modal.js" defer></script>
@@ -62,11 +65,11 @@
                     <img src="images/logo.png" alt="Aurora Travel">
                 </a>
                 <ul class="site-nav__list">
-                    <li><a href="index.html" class="site-nav__link" aria-current="page">首頁</a></li>
+                    <li><a href="index.html" class="site-nav__link">首頁</a></li>
                     <li><a href="about.html" class="site-nav__link">關於我們</a></li>
                     <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
                     <li><a href="travel.html" class="site-nav__link">行程清單</a></li>
-                    <li><a href="news.html" class="site-nav__link is-active">最新消息</a></li>
+                    <li><a href="news.html" class="site-nav__link is-active" aria-current="page">最新消息</a></li>
                     <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
                     <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
                 </ul>
@@ -120,25 +123,103 @@
         </div>
     </header>
 
-    <section class="page-hero page-hero--news">
-        <div class="container page-hero__inner">
-            <div class="page-hero__content">
-                <p class="page-hero__eyebrow" lang="en">
-                    JOURNAL
-                </p>
-                <h1 class="page-hero__title">
-                    極光旅誌
-                    <br>
-                    極光旅程
-                </h1>
-                <p class="page-hero__desc">
-                    從追光攻略到旅人故事，從穿搭指南到攝影技巧 — 這裡是所有極光愛好者的靈感泉源。
-                </p>
+    <!-- 最新消息內容 -->
+    <main class="news-page">
+
+        <section class="page-hero page-hero--news">
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <p class="page-hero__eyebrow" lang="en">
+                        JOURNAL
+                    </p>
+                    <h1 class="page-hero__title">
+                        極光旅誌
+                    </h1>
+                    <p class="page-hero__desc">
+                        從追光攻略到旅人故事，從穿搭指南到攝影技巧 — 這裡是所有極光愛好者的靈感泉源。
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- 文章分類 -->
+        <section class="news-category section-md">
+            <div class="container">
 
+                <div class="filter-tabs" role="tablist" aria-label="文章分類">
+
+                    <button class="filter-tab is-active" type="button" role="tab" aria-selected="true"
+                        data-category="all">
+
+                        <i class="ti ti-world" aria-hidden="true"></i>
+                        全部
+                    </button>
+
+                    <button class="filter-tab" type="button" role="tab" aria-selected="false"
+                        data-category="aurora-guide">
+
+                        <i class="ti ti-route" aria-hidden="true"></i>
+                        極光攻略
+                    </button>
+
+                    <button class="filter-tab" type="button" role="tab" aria-selected="false"
+                        data-category="destination">
+
+                        <i class="ti ti-compass" aria-hidden="true"></i>
+                        目的地探索
+                    </button>
+
+                    <button class="filter-tab" type="button" role="tab" aria-selected="false"
+                        data-category="traveler-story">
+
+                        <i class="ti ti-heart" aria-hidden="true"></i>
+                        旅人故事
+                    </button>
+
+                    <button class="filter-tab" type="button" role="tab" aria-selected="false" data-category="latest">
+
+                        <i class="ti ti-bolt" aria-hidden="true"></i>
+                        最新資訊
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 精選文章 -->
+        <section class="news-featured section-lg">
+            <div class="container">
+
+                <div id="featuredArticle"></div>
+
+            </div>
+        </section>
+
+        <!-- 文章列表 -->
+        <section class="news-list section-lg">
+            <div class="container">
+
+                <div class="news-grid grid grid-3" id="newsGrid">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <nav class="news-pagination section-md" aria-label="文章分頁">
+
+            <div class="container">
+
+                <div class="news-pagination__inner" id="newsPagination">
+                </div>
+
+            </div>
+
+        </nav>
+
+    </main>
+    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -226,8 +307,8 @@
                         </li>
                         <li>
                             <i class="ti ti-phone" aria-hidden="true"></i>
-                            <a href="tel:+886287886688">
-                                +886 2 8788 6688
+                            <a href="tel:0287886688">
+                                02-8788-6688
                             </a>
                         </li>
                         <li>
@@ -287,4 +368,5 @@
 
 
 </body>
+
 </html>

@@ -25,14 +25,73 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // 讀取網址參數
+    const params = new URLSearchParams(window.location.search);
+    const destinationParam = params.get("destination");
+
+    // 網站目前支援的國家
+    const validCountries = [
+        "iceland",
+        "finland",
+        "norway",
+        "sweden"
+    ];
+
     // 目前選擇的篩選條件
-    let selectedCountry = "all";
+    let selectedCountry =
+        validCountries.includes(destinationParam)
+            ? destinationParam
+            : "all";
+
     let selectedDays = "all";
     let selectedDifficulty = "all";
     let selectedSort = "featured";
 
     // 目前搜尋關鍵字
     let searchKeyword = "";
+
+    function syncCountryDropdown() {
+
+        const countryDropdown = document.querySelector(
+            '[data-filter="country"]'
+        );
+
+        if (!countryDropdown) return;
+
+
+        const label = countryDropdown.querySelector(
+            "[data-dropdown-label]"
+        );
+
+        const options = countryDropdown.querySelectorAll(
+            ".tour-dropdown__option"
+        );
+
+        const activeOption = countryDropdown.querySelector(
+            `.tour-dropdown__option[data-value="${selectedCountry}"]`
+        );
+
+
+        if (!activeOption) return;
+
+
+        // 更新 Dropdown 顯示文字
+        if (label) {
+            label.textContent =
+                activeOption.textContent.trim();
+        }
+
+
+        // 清除原本選中狀態
+        options.forEach((option) => {
+            option.classList.remove("is-active");
+        });
+
+
+        // 套用目前選中的國家
+        activeOption.classList.add("is-active");
+
+    }
 
     function formatPrice(price) {
         return `NT$ ${price.toLocaleString("zh-TW")}`;
@@ -486,6 +545,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+
+    // 第一次載入時同步網址篩選畫面
+    syncCountryDropdown();
 
     // 第一次載入時套用預設篩選與排序
     applyFilters();

@@ -508,7 +508,7 @@
 @media (max-width: 1024px) {
 
     .tour-toolbar {
-        padding-top: calc(82px + var(--space-4));
+        padding-top: var(--space-8);
     }
 
     .tour-toolbar__main {
@@ -522,10 +522,6 @@
 }
 
 @media (max-width: 768px) {
-
-    .tour-toolbar {
-        padding-top: calc(74px + var(--space-4));
-    }
 
     .tour-filters {
         grid-template-columns:

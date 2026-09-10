@@ -8,8 +8,8 @@ const destinations = {
         image: "images/destinations/iceland.jpg",
         thumbnail: "images/destinations/iceland-thumb.jpg",
         imageAlt: "冰島黑沙灘上空舞動的綠色極光",
-        price: "NT$128,000",
-        tours: "12",
+        price: "NT$108,000",
+        tours: "3",
         button: "瀏覽冰島行程",
         url: "travel.html?destination=iceland"
     },
@@ -22,8 +22,8 @@ const destinations = {
         image: "images/destinations/finland.jpg",
         imageAlt: "芬蘭雪林玻璃屋上空的極光",
         thumbnail: "images/destinations/finland-thumb.jpg",
-        price: "NT$145,000",
-        tours: "9",
+        price: "NT$98,000",
+        tours: "3",
         button: "瀏覽芬蘭行程",
         url: "travel.html?destination=finland"
     },
@@ -36,8 +36,8 @@ const destinations = {
         image: "images/destinations/norway.jpg",
         imageAlt: "挪威峽灣夜空中的綠色極光",
         thumbnail: "images/destinations/norway-thumb.jpg",
-        price: "NT$152,000",
-        tours: "10",
+        price: "NT$189,000",
+        tours: "3",
         button: "瀏覽挪威行程",
         url: "travel.html?destination=norway"
     },
@@ -50,8 +50,8 @@ const destinations = {
         image: "images/destinations/sweden.jpg",
         imageAlt: "瑞典阿比斯庫國家公園的極光夜空",
         thumbnail: "images/destinations/sweden-thumb.jpg",
-        price: "NT$138,000",
-        tours: "8",
+        price: "NT$118,000",
+        tours: "3",
         button: "瀏覽瑞典行程",
         url: "travel.html?destination=sweden"
     }

@@ -322,7 +322,7 @@
             rgba(2, 20, 32, 0.2) 45%,
             transparent 70%);
 
-    color: var(--color-white);
+    color: var(--white);
 
     opacity: 0;
 
@@ -605,7 +605,7 @@
 
     color: var(--text-secondary);
 
-    line-height: var(--lh-relaxed);
+    line-height: var(--lh-loose);
 }
 
 .travel-includes__list li i {
@@ -743,7 +743,7 @@
     gap: var(--space-2);
 
     color: var(--text-secondary);
-    line-height: var(--lh-relaxed);
+    line-height: var(--lh-loose);
 }
 
 .travel-booking__notice-list i {

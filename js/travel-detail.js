@@ -485,6 +485,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // 更新瀏覽器分頁標題
+    document.title = `${tour.title}｜極光旅行 Aurora Travel`;
+
 
     renderHero(tour);
     renderInfo(tour);
