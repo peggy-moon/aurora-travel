@@ -13,6 +13,12 @@
     padding-inline: var(--container-padding);
 }
 
+.container-md {
+    width: min(960px, 100%);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
 .container {
     width: min(1280px, 100%);
     margin-inline: auto;

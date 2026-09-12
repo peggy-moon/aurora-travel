@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>極光旅行｜AURORA TRAVEL</title>
+    <title>常見問題｜AURORA TRAVEL</title>
     <link rel="icon" href="images/logo-icon.png" type="image/x-icon">
 
     <!-- Google Font(下面這兩句意思是:等等要去 Google Fonts 拿東西，先幫我建立連線吧～) -->
@@ -27,13 +27,15 @@
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/faq.css" rel="stylesheet">
 
     <!-- Header 滾動效果 -->
     <script src="JS/header.js" defer></script>
 
     <!-- 通用通知框 -->
     <script src="JS/notice-modal.js" defer></script>
+
+    <script src="JS/faq.js" defer></script>
 
     <!-- 有這句在電腦上預覽手機版網頁才能正常顯示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,13 +64,13 @@
                     <img src="images/logo.png" alt="Aurora Travel">
                 </a>
                 <ul class="site-nav__list">
-                    <li><a href="index.html" class="site-nav__link" aria-current="page">首頁</a></li>
+                    <li><a href="index.html" class="site-nav__link">首頁</a></li>
                     <li><a href="about.html" class="site-nav__link">關於我們</a></li>
                     <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
                     <li><a href="travel.html" class="site-nav__link">行程清單</a></li>
                     <li><a href="news.html" class="site-nav__link">最新消息</a></li>
                     <li><a href="contact.html" class="site-nav__link">聯絡我們</a></li>
-                    <li><a href="faq.html" class="site-nav__link is-active">常見問題</a></li>
+                    <li><a href="faq.html" class="site-nav__link is-active" aria-current="page">常見問題</a></li>
                 </ul>
 
                 <div class="site-nav__mobile-extra">
@@ -120,24 +122,545 @@
         </div>
     </header>
 
-    <section class="page-hero page-hero--faq">
-        <div class="container page-hero__inner">
-            <div class="page-hero__content">
-                <p class="page-hero__eyebrow" lang="en">
-                    FREQUENTLY ASKED QUESTIONS
-                </p>
-                <h1 class="page-hero__title">
-                    關於極光之旅
-                    <br>
-                    你好奇的一切
-                </h1>
-                <p class="page-hero__desc">
-                    從極光觀賞時機、行前準備到行程預訂，我們整理了旅客最常問的問題，幫助你安心規劃追光旅程。
-                </p>
+    <main>
+        <section class="page-hero page-hero--faq">
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <p class="page-hero__eyebrow" lang="en">
+                        FREQUENTLY ASKED QUESTIONS
+                    </p>
+                    <h1 class="page-hero__title">
+                        關於極光之旅
+                        <br>
+                        你好奇的一切
+                    </h1>
+                    <p class="page-hero__desc">
+                        從極光觀賞時機、行前準備到行程預訂，我們整理了旅客最常問的問題，幫助你安心規劃追光旅程。
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- FAQ -->
+        <section class="faq section-lg">
+            <div class="container-md">
+
+                <!-- 區塊標題 -->
+                <div class="section-header section-header--center">
+                    <p class="section-header__eyebrow" lang="en">
+                        FAQ
+                    </p>
+
+                    <h2 class="section-header__title">
+                        常見問題
+                    </h2>
+
+                    <p class="section-header__desc">
+                        找不到你需要的答案嗎？歡迎隨時
+                        <a href="contact.html" class="faq__contact-link">
+                            聯絡我們
+                        </a>
+                        。
+                    </p>
+                </div>
+
+                <!-- 分類 -->
+                <div class="filter-tabs" aria-label="常見問題分類">
+                    <button class="filter-tab is-active" type="button" data-category="all" aria-pressed="true">
+                        全部
+                    </button>
+
+                    <button class="filter-tab" type="button" data-category="aurora" aria-pressed="false">
+                        極光觀賞
+                    </button>
+
+                    <button class="filter-tab" type="button" data-category="booking" aria-pressed="false">
+                        行程預訂
+                    </button>
+
+                    <button class="filter-tab" type="button" data-category="prepare" aria-pressed="false">
+                        行前準備
+                    </button>
+
+                    <button class="filter-tab" type="button" data-category="payment" aria-pressed="false">
+                        付款與費用
+                    </button>
+                </div>
+
+                <!-- FAQ 清單 -->
+                <div class="faq-list">
+
+                    <!-- FAQ 01 -->
+                    <article class="faq-item is-open" data-category="aurora">
+                        <button class="faq-item__question" type="button" aria-expanded="true">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                什麼時候是觀賞極光的最佳季節？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    北歐的極光季節通常從每年 9 月開始，一直持續到隔年 4 月初。
+                                    其中 10 月至 3 月擁有較長的夜晚，是非常適合追尋極光的時段。
+                                    實際是否能看見極光仍會受到雲量、天氣與太陽活動等自然條件影響。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ 02 -->
+                    <article class="faq-item" data-category="aurora">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                參加行程一定能看到極光嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    極光屬於自然現象，因此無法保證每次出發都能看見。
+                                    行程會依當地天氣、雲量與極光預報彈性調整追光地點，
+                                    盡可能提高觀賞極光的機會。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 03 -->
+                    <article class="faq-item" data-category="aurora">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                哪個國家最適合第一次追極光？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    冰島、挪威、芬蘭與瑞典都有非常成熟的極光旅遊環境。
+                                    第一次追極光可以依照喜歡的旅行方式選擇，例如冰島適合自然景觀巡遊，
+                                    芬蘭則很適合喜歡玻璃屋與雪地體驗的旅客。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ 04 -->
+                    <article class="faq-item" data-category="aurora">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                肉眼看到的極光和照片一樣嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    不一定。相機可以透過長時間曝光捕捉更多光線，因此照片中的極光通常比肉眼看到的更加鮮豔。
+                                    當極光活動較弱時，肉眼可能只看見淡淡的白色或灰綠色光帶；
+                                    活動強烈時，則有機會清楚看見綠色、紫色與快速舞動的光芒。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 05 -->
+                    <article class="faq-item" data-category="booking">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                如何預訂行程？需要提前多久？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    選擇喜歡的行程後，可以透過行程詳情頁的預約按鈕填寫需求，
+                                    我們會與你確認出發日期、人數與相關細節。
+                                    極光季的住宿與熱門體驗較容易額滿，建議至少提前 3 至 6 個月預訂。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 06 -->
+                    <article class="faq-item" data-category="booking">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                可以客製化行程嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    可以。我們能依照旅行天數、預算、同行人數與喜歡的活動調整行程，
+                                    例如增加玻璃屋住宿、狗拉雪橇、冰河健行或攝影體驗。
+                                    填寫諮詢表單時告訴我們你的需求，就能進一步討論適合的安排。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 07 -->
+                    <article class="faq-item" data-category="booking">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                行程人數有限制嗎？一個人可以報名嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    每個行程會依交通工具、住宿與活動內容設定不同的人數上限。
+                                    一個人也可以報名團體行程，我們會協助安排與其他旅客同行；
+                                    若希望入住單人房，則可能需要另外支付單人房差額。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 08 -->
+                    <article class="faq-item" data-category="booking">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                取消或更改行程的政策是什麼？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    若需要取消或更改行程，請盡早與我們聯繫。
+                                    實際可退還的金額會依通知時間，以及住宿、交通與活動供應商的取消規定計算。
+                                    完成預訂前，我們也會提供完整的取消與更改條款供你確認。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 09 -->
+                    <article class="faq-item" data-category="prepare">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                去北極圈需要準備什麼裝備？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    建議採用三層式穿搭，準備排汗內層、保暖中層及防風防水外套，
+                                    並攜帶保暖帽、防水手套、羊毛襪與防滑雪靴。
+                                    如果想拍攝極光，也可以準備三腳架、備用電池及行動電源。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 10 -->
+                    <article class="faq-item" data-category="prepare">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                需要辦理簽證嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    簽證規定會依目的地、護照種類與停留天數而有所不同。
+                                    請在出發前確認護照效期，並查詢目的地政府公布的最新入境規定。
+                                    若行程包含轉機，也要一併確認轉機國家的相關要求。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 11 -->
+                    <article class="faq-item" data-category="prepare">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                極地旅行需要購買保險嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    建議購買包含海外醫療、緊急救援、行程取消與行李延誤的旅遊保險。
+                                    如果行程包含雪地摩托、冰河健行或狗拉雪橇等活動，
+                                    請確認保險保障範圍是否涵蓋相關戶外活動。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 12 -->
+                    <article class="faq-item" data-category="prepare">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                帶小孩或長輩適合追極光嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    可以，但需要依同行者的年齡、健康狀況與耐寒能力選擇合適的行程。
+                                    建議安排較短的戶外等待時間、舒適的交通工具，以及玻璃屋等室內觀賞方式。
+                                    報名前也可以先告訴我們同行者的需求，以便協助評估。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 13 -->
+                    <article class="faq-item" data-category="payment">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                行程費用包含哪些項目？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    多數行程費用包含住宿、行程中所列餐食、當地導遊、機場與行程接送、
+                                    景點門票及極光追蹤活動。國際來回機票、個人旅遊保險、
+                                    自由活動餐食與個人消費通常不包含在內，實際項目請以各行程說明為準。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 14 -->
+                    <article class="faq-item" data-category="payment">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                接受哪些付款方式？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    我們接受銀行轉帳與信用卡付款。
+                                    完成行程確認後，將提供付款方式、訂金金額與尾款期限等資訊。
+                                    若使用信用卡或分期付款，可能會依付款平台規定產生額外手續費。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 15 -->
+                    <article class="faq-item" data-category="payment">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                行程價格會因為人數而有所不同嗎？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    可能會。團體人數會影響車輛、導遊、住宿與活動安排，因此客製化行程的價格可能依人數調整。
+                                    一般團體行程則會以每人價格計算，若選擇單人房或私人包團，也可能產生額外費用。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- FAQ 16 -->
+                    <article class="faq-item" data-category="payment">
+                        <button class="faq-item__question" type="button" aria-expanded="false">
+
+                            <span class="faq-item__icon" aria-hidden="true">
+                                Q
+                            </span>
+
+                            <span class="faq-item__title">
+                                為什麼極光行程的價格偏高？
+                            </span>
+
+                            <i class="ti ti-chevron-down faq-item__arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-inner">
+                                <p>
+                                    北極圈的住宿、交通與人力成本較高，冬季行程還需要專業嚮導、
+                                    雪地車輛、保暖設備及彈性的追光安排。
+                                    我們會在安全與舒適的前提下規劃行程，讓旅客能更安心地深入極地環境。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ CTA -->
+        <section class="faq-cta section-lg">
+            <div class="container">
+
+                <header class="section-header section-header--center">
+                    <p class="section-header__eyebrow" lang="en">
+                        STILL HAVE QUESTIONS?
+                    </p>
+
+                    <h2 class="section-header__title">
+                        <span>還有其他<br class="mobile-only">想知道的嗎？</span>
+                        <br>
+                        我們很樂意<br class="mobile-only">為你解答
+                    </h2>
+
+                    <p class="section-header__desc">
+                        如果沒有找到你需要的答案，
+                        歡迎告訴我們你的疑問或旅行需求，
+                        我們會陪你一起做好出發前的每一項準備。
+                    </p>
+                </header>
+
+                <div class="faq-cta__actions">
+                    <a href="contact.html" class="btn btn-primary">
+                        聯絡我們
+                        <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="travel.html" class="btn btn-primary--outline">
+                        探索行程
+                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -287,4 +810,5 @@
 
 
 </body>
+
 </html>

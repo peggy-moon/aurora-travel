@@ -1,0 +1,190 @@
+.page-hero--faq {
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 20, 30, 0.82) 0%,
+            rgba(0, 20, 30, 0.48) 48%,
+            rgba(0, 20, 30, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(0, 15, 24, 0.68) 0%,
+            transparent 55%),
+        url("../images/faq-hero.jpg");
+}
+
+/* FAQ 主區塊 */
+.faq {
+    position: relative;
+}
+
+
+/* 聯絡我們文字連結 */
+.faq__contact-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    transition: color .2s ease;
+}
+
+.faq__contact-link:hover {
+    color: var(--color-primary-hover);
+}
+
+
+/* FAQ 清單 */
+.faq-list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+
+/* FAQ 單項 */
+.faq-item {
+    overflow: hidden;
+
+    border: var(--border-w) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--color-bg-secondary);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--color-primary);
+}
+
+
+/* 展開狀態 */
+.faq-item.is-open {
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+
+/* 問題按鈕 */
+.faq-item__question {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+
+    padding: var(--space-6);
+
+    border: 0;
+
+    background: transparent;
+    color: var(--text-primary);
+
+    text-align: left;
+    cursor: pointer;
+}
+
+
+/* Q 圓圈 */
+.faq-item__icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+
+    font-family: var(--font-display);
+    font-weight: var(--fw-bold);
+}
+
+
+/* 問題文字 */
+.faq-item__title {
+    font-size: var(--text-lg);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+}
+
+
+/* 右側箭頭 */
+.faq-item__arrow {
+    color: var(--text-muted);
+    font-size: var(--text-xl);
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+}
+
+.faq-item.is-open .faq-item__arrow {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+
+/* 答案區 */
+.faq-item__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows .3s ease;
+}
+
+.faq-item.is-open .faq-item__answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-item__answer-inner {
+    overflow: hidden;
+}
+
+
+/* 答案文字 */
+.faq-item__answer-inner p {
+    padding:
+        0 var(--space-6) var(--space-6) calc(42px + var(--space-10));
+
+    color: var(--text-secondary);
+
+    line-height: var(--lh-loose);
+}
+
+/* FAQ CTA */
+.faq-cta {
+    background: var(--color-bg-secondary);
+}
+
+.faq-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 480px) {
+
+    .faq-cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .faq-cta__actions .btn {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mobile-only {
+        display: inline;
+    }
+
+}
