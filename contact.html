@@ -27,13 +27,20 @@
     <link href="CSS/components.css" rel="stylesheet">
     <link href="CSS/utilities.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/contact.css" rel="stylesheet">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
 
     <!-- Header 滾動效果 -->
     <script src="JS/header.js" defer></script>
 
     <!-- 通用通知框 -->
     <script src="JS/notice-modal.js" defer></script>
+
+    <!-- 表單 -->
+    <script src="JS/contact.js" defer></script>
 
     <!-- 有這句在電腦上預覽手機版網頁才能正常顯示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,12 +69,12 @@
                     <img src="images/logo.png" alt="Aurora Travel">
                 </a>
                 <ul class="site-nav__list">
-                    <li><a href="index.html" class="site-nav__link" aria-current="page">首頁</a></li>
+                    <li><a href="index.html" class="site-nav__link">首頁</a></li>
                     <li><a href="about.html" class="site-nav__link">關於我們</a></li>
                     <li><a href="destinations.html" class="site-nav__link">目的地</a></li>
                     <li><a href="travel.html" class="site-nav__link">行程清單</a></li>
                     <li><a href="news.html" class="site-nav__link">最新消息</a></li>
-                    <li><a href="contact.html" class="site-nav__link is-active">聯絡我們</a></li>
+                    <li><a href="contact.html" class="site-nav__link is-active" aria-current="page">聯絡我們</a></li>
                     <li><a href="faq.html" class="site-nav__link">常見問題</a></li>
                 </ul>
 
@@ -120,25 +127,359 @@
         </div>
     </header>
 
-    <section class="page-hero page-hero--contact">
-        <div class="container page-hero__inner">
-            <div class="page-hero__content">
-                <p class="page-hero__eyebrow" lang="en">
-                    GET IN TOUCH
-                </p>
-                <h1 class="page-hero__title">
-                    讓極光之旅
-                    <br>
-                    從這裡開始
-                </h1>
-                <p class="page-hero__desc">
-                    無論是行程諮詢、客製規劃還是任何疑問，我們都很樂意傾聽你的想法，一起規劃屬於你的極光故事。
-                </p>
+    <main>
+
+        <section class="page-hero page-hero--contact">
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <p class="page-hero__eyebrow" lang="en">
+                        GET IN TOUCH
+                    </p>
+                    <h1 class="page-hero__title">
+                        讓極光之旅
+                        <br>
+                        從這裡開始
+                    </h1>
+                    <p class="page-hero__desc">
+                        無論是行程諮詢、客製規劃還是任何疑問，我們都很樂意傾聽你的想法，一起規劃屬於你的極光故事。
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Main -->
+        <section class="contact-main section-lg">
+            <div class="container">
+
+                <div class="contact-main__grid">
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-area">
+
+                        <header class="section-header section-header--left">
+                            <p class="section-header__eyebrow">
+                                SEND A MESSAGE
+                            </p>
+
+                            <h2 class="section-header__title">
+                                寫下你的想法，<br>
+                                <span>我們來實現</span>
+                            </h2>
+
+                            <p class="section-header__desc">
+                                請填寫以下表單，我們的專員會在 1–2 個工作日內回覆你。
+                                你也可以直接撥打電話或來信，我們隨時歡迎。
+                            </p>
+                        </header>
 
 
+                        <form class="contact-form" id="contact-form" novalidate>
+
+                            <div class="contact-form__grid">
+
+                                <!-- 姓名 -->
+                                <div class="field">
+                                    <label class="label" for="contact-name">
+                                        姓名
+                                        <span class="form-required" aria-hidden="true">*</span>
+                                    </label>
+
+                                    <input class="input" type="text" id="contact-name" name="name" placeholder="你的姓名"
+                                        autocomplete="name" aria-describedby="contact-name-error" required>
+
+                                    <p class="field__error" id="contact-name-error"></p>
+                                </div>
+
+
+                                <!-- Email -->
+                                <div class="field">
+                                    <label class="label" for="contact-email">
+                                        電子郵件
+                                        <span class="form-required" aria-hidden="true">*</span>
+                                    </label>
+
+                                    <input class="input" type="email" id="contact-email" name="email"
+                                        placeholder="your@email.com" autocomplete="email"
+                                        aria-describedby="contact-email-error" required>
+
+                                    <p class="field__error" id="contact-email-error"></p>
+                                </div>
+
+
+                                <!-- 電話 -->
+                                <div class="field">
+                                    <label class="label" for="contact-phone">
+                                        聯絡電話
+                                    </label>
+
+                                    <input class="input" type="tel" id="contact-phone" name="phone"
+                                        placeholder="09xx-xxx-xxx" autocomplete="tel">
+                                </div>
+
+
+                                <!-- 主題 -->
+                                <div class="field">
+                                    <label class="label" for="contact-subject">
+                                        諮詢主題
+                                        <span class="form-required" aria-hidden="true">*</span>
+                                    </label>
+
+                                    <select class="select" id="contact-subject" name="subject"
+                                        aria-describedby="contact-subject-error" required>
+                                        <option value="" selected disabled>
+                                            請選擇主題
+                                        </option>
+                                        <option value="行程諮詢">
+                                            行程諮詢
+                                        </option>
+                                        <option value="客製旅程">
+                                            客製旅程
+                                        </option>
+                                        <option value="合作提案">
+                                            合作提案
+                                        </option>
+                                        <option value="其他問題">
+                                            其他問題
+                                        </option>
+                                    </select>
+
+                                    <p class="field__error" id="contact-subject-error"></p>
+                                </div>
+                            </div>
+
+
+                            <!-- 訊息 -->
+                            <div class="field">
+                                <label class="label" for="contact-message">
+                                    訊息內容
+                                    <span class="form-required" aria-hidden="true">*</span>
+                                </label>
+
+                                <textarea class="textarea" id="contact-message" name="message" rows="7" maxlength="500"
+                                    aria-describedby="contact-message-error"
+                                    placeholder="請描述你的需求、預計出發時間、人數等資訊，讓我們更了解你的想法⋯" required></textarea>
+
+                                <p class="contact-form__count">
+                                    <span id="message-count">0</span> / 500
+                                </p>
+
+                                <p class="field__error" id="contact-message-error"></p>
+                            </div>
+
+                            <div class="contact-form__actions">
+                                <button class="btn btn-primary" type="submit">
+                                    送出訊息
+                                    <i class="ti ti-send"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                    <!-- Contact Info -->
+                    <aside class="contact-info" aria-label="聯絡資訊">
+
+                        <article class="contact-info__card">
+                            <div class="contact-info__icon">
+                                <i class="ti ti-map-pin"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="contact-info__title">
+                                    辦公室地址
+                                </h3>
+
+                                <p class="contact-info__text">
+                                    台北市信義區松高路 68 號 12F
+                                </p>
+                            </div>
+                        </article>
+
+
+                        <article class="contact-info__card">
+                            <div class="contact-info__icon">
+                                <i class="ti ti-phone"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="contact-info__title">
+                                    電話
+                                </h3>
+
+                                <a class="contact-info__link" href="tel:0287886688">
+                                    02 8788 6688
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <article class="contact-info__card">
+                            <div class="contact-info__icon">
+                                <i class="ti ti-mail"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="contact-info__title">
+                                    電子郵件
+                                </h3>
+
+                                <a class="contact-info__link" href="mailto:hello@aurora-travel.com">
+                                    hello@aurora-travel.com
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <article class="contact-info__card">
+                            <div class="contact-info__icon">
+                                <i class="ti ti-clock"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="contact-info__title">
+                                    營業時間
+                                </h3>
+
+                                <p class="contact-info__text">
+                                    週一至週五 09:00 – 18:00
+                                </p>
+
+                                <p class="contact-info__note">
+                                    週末及國定假日休息
+                                </p>
+                            </div>
+                        </article>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Visit Us -->
+        <section class="contact-visit section-lg">
+            <div class="container">
+
+                <header class="section-header section-header--center">
+                    <p class="section-header__eyebrow">VISIT US</p>
+
+                    <h2 class="section-header__title">
+                        親自來找我們
+                    </h2>
+
+                    <p class="section-header__desc">
+                        我們位於台北信義區，歡迎預約到訪，
+                        面對面聊聊你的極光旅行計畫。
+                    </p>
+                </header>
+
+
+                <!-- Map -->
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0098488811927!2d121.56146247537647!3d25.033739827816586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da80a7ad%3A0xacc4d11dc963103c!2z5Y-w5YyXMTAx6LO854mp5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1789046890457!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+
+
+                <!-- Transport -->
+                <div class="contact-transport">
+
+                    <article class="feature-card feature-card--vertical contact-transport__card">
+                        <div class="feature-card__icon">
+                            <i class="ti ti-train"></i>
+                        </div>
+
+                        <div class="feature-card__content">
+                            <h3 class="feature-card__title">
+                                捷運
+                            </h3>
+
+                            <p class="feature-card__text">
+                                市政府站 3 號出口<br>
+                                步行約 5 分鐘
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card feature-card--vertical contact-transport__card">
+                        <div class="feature-card__icon">
+                            <i class="ti ti-bus"></i>
+                        </div>
+
+                        <div class="feature-card__content">
+                            <h3 class="feature-card__title">
+                                公車
+                            </h3>
+
+                            <p class="feature-card__text">
+                                市政府站（松高路）<br>
+                                多線公車均可抵達
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card feature-card--vertical contact-transport__card">
+                        <div class="feature-card__icon">
+                            <i class="ti ti-car"></i>
+                        </div>
+
+                        <div class="feature-card__content">
+                            <h3 class="feature-card__title">
+                                開車
+                            </h3>
+
+                            <p class="feature-card__text">
+                                鄰近信義商圈停車場<br>
+                                大樓設有訪客車位
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta section-lg">
+            <div class="container">
+
+                <header class="section-header section-header--center">
+                    <p class="section-header__eyebrow" lang="en">
+                        READY TO EXPLORE
+                    </p>
+
+                    <h2 class="section-header__title">
+                        還在尋找<br class="mobile-only">旅行靈感？
+                        <br>
+                        <span>先看看我們的<br class="mobile-only">極光旅程</span>
+                    </h2>
+
+                    <p class="section-header__desc">
+                        從冰島火山、挪威峽灣到芬蘭雪林，
+                        找到最接近你心中那場極光旅行的路線。
+                    </p>
+                </header>
+
+                <div class="contact-cta__actions">
+                    <a href="travel.html" class="btn btn-primary">
+                        探索所有行程
+                        <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="destinations.html" class="btn btn-primary--outline">
+                        探索目的地
+                        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -287,4 +628,5 @@
 
 
 </body>
+
 </html>

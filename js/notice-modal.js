@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
         closeButton.focus();
     }
 
+    // 提供其他 JS 使用
+    window.openNoticeModal = openModal;
+
     function closeModal() {
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");

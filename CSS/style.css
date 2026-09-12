@@ -1,15 +1,3 @@
-.page-hero--contact {
-    background-image:
-        linear-gradient(90deg,
-            rgba(0, 20, 30, 0.82) 0%,
-            rgba(0, 20, 30, 0.48) 48%,
-            rgba(0, 20, 30, 0.12) 100%),
-        linear-gradient(0deg,
-            rgba(0, 15, 24, 0.68) 0%,
-            transparent 55%),
-        url("../images/contact-hero.jpg");
-}
-
 .page-hero--faq {
     background-image:
         linear-gradient(90deg,
