@@ -395,3 +395,8 @@ renderArticleHero();
 renderArticleContent();
 renderArticleAuthor();
 renderRelatedArticles();
+
+// 通知 animations.js：文章詳情已渲染完成
+document.dispatchEvent(
+    new CustomEvent("news-detail-rendered")
+);

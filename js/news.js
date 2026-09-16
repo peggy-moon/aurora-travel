@@ -158,23 +158,39 @@ function renderFeaturedArticle() {
 
     `;
 
+    // 通知 animations.js：精選文章已渲染完成
+    document.dispatchEvent(
+        new CustomEvent("featured-news-rendered")
+    );
+
 }
 
 /* 控制精選文章顯示 */
 
-function updateFeaturedVisibility() {
+function updateFeaturedVisibility(animate = true) {
 
     if (!featuredSection) return;
 
 
-    featuredSection.hidden =
-        selectedCategory !== "all";
-}
+    const shouldShow =
+        selectedCategory === "all";
 
+    featuredSection.hidden =
+        !shouldShow;
+
+
+    if (shouldShow && animate) {
+
+        document.dispatchEvent(
+            new CustomEvent("featured-news-rendered")
+        );
+
+    }
+}
 
 /* 一般文章卡片 */
 
-function renderNewsCards() {
+function renderNewsCards(animate = true) {
 
     if (!newsGrid) return;
 
@@ -260,6 +276,13 @@ function renderNewsCards() {
 
             })
             .join("");
+
+    // 通知 animations.js：文章卡片已渲染完成
+    if (animate) {
+        document.dispatchEvent(
+            new CustomEvent("news-cards-rendered")
+        );
+    }
 
 }
 
@@ -412,7 +435,7 @@ function setupPagination() {
             }
 
 
-            renderNewsCards();
+            renderNewsCards(false);
             renderPagination();
 
             const header =
@@ -424,6 +447,16 @@ function setupPagination() {
             const newsGridTop =
                 newsGrid.getBoundingClientRect().top
                 + window.scrollY;
+
+            window.addEventListener(
+                "scrollend",
+                () => {
+                    document.dispatchEvent(
+                        new CustomEvent("news-cards-rendered")
+                    );
+                },
+                { once: true }
+            );
 
             window.scrollTo({
                 top: newsGridTop - headerHeight - 24,
@@ -484,7 +517,7 @@ function setupCategoryTabs() {
 /* 初始畫面 */
 
 renderFeaturedArticle();
-updateFeaturedVisibility();
+updateFeaturedVisibility(false);
 
 renderNewsCards();
 renderPagination();

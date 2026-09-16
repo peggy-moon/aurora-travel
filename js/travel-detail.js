@@ -497,4 +497,9 @@ document.addEventListener("DOMContentLoaded", () => {
     renderIncludes(tour);
     renderBooking(tour);
 
+    // 通知 animations.js：詳細行程已渲染完成
+    document.dispatchEvent(
+        new CustomEvent("travel-detail-rendered")
+    );
+
 });

@@ -29,7 +29,16 @@
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/news.css" rel="stylesheet">
 
-    <!-- Header 滾動效果 -->
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 全站動畫 -->
+    <script src="JS/animations.js" defer></script>
+
+    <!-- Header -->
     <script src="JS/header.js" defer></script>
 
     <script src="JS/news-data.js" defer></script>
@@ -146,7 +155,7 @@
         <section class="news-category section-md">
             <div class="container">
 
-                <div class="filter-tabs" role="tablist" aria-label="文章分類">
+                <div class="filter-tabs" role="tablist" aria-label="文章分類" data-animate="fade-up">
 
                     <button class="filter-tab is-active" type="button" role="tab" aria-selected="true"
                         data-category="all">
@@ -219,7 +228,7 @@
         </nav>
 
     </main>
-    
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">

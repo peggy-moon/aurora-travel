@@ -29,7 +29,16 @@
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/about.css" rel="stylesheet">
 
-    <!-- Header 滾動效果 -->
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 全站動畫 -->
+    <script src="JS/animations.js" defer></script>
+
+    <!-- Header -->
     <script src="JS/header.js" defer></script>
 
     <!-- 通用通知框 -->
@@ -145,7 +154,7 @@
                 <div class="about-story__grid">
 
                     <!-- 左側文字 -->
-                    <div class="about-story__content">
+                    <div class="about-story__content" data-animate="about-story-content">
                         <p class="about-story__eyebrow" lang="en">
                             HOW IT BEGAN
                         </p>
@@ -178,7 +187,7 @@
                     </div>
 
                     <!-- 右側圖片 -->
-                    <div class="about-story__gallery">
+                    <div class="about-story__gallery" data-animate="about-story-gallery">
                         <figure class="about-story__main-media">
                             <img src="images/about/about-story-main.jpg" alt="旅人們在極光下圍著營火取暖">
                         </figure>
@@ -201,7 +210,7 @@
         <!-- 品牌承諾 -->
         <section class="about-values section-lg">
             <div class="container">
-                <div class="section-header section-header--center">
+                <div class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         WHAT WE STAND FOR
                     </p>
@@ -291,7 +300,7 @@
             <div class="container">
 
                 <!-- 共用區塊標題 -->
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         MEET THE TEAM
                     </p>
@@ -415,7 +424,7 @@
         <section class="about-cta section-lg">
             <div class="container">
 
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         LET’S TALK
                     </p>

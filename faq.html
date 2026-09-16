@@ -29,7 +29,16 @@
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/faq.css" rel="stylesheet">
 
-    <!-- Header 滾動效果 -->
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 全站動畫 -->
+    <script src="JS/animations.js" defer></script>
+
+    <!-- Header -->
     <script src="JS/header.js" defer></script>
 
     <!-- 通用通知框 -->
@@ -146,7 +155,7 @@
             <div class="container-md">
 
                 <!-- 區塊標題 -->
-                <div class="section-header section-header--center">
+                <div class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         FAQ
                     </p>
@@ -627,7 +636,7 @@
         <section class="faq-cta section-lg">
             <div class="container">
 
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         STILL HAVE QUESTIONS?
                     </p>

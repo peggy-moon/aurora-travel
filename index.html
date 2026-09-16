@@ -29,7 +29,16 @@
     <link href="CSS/home.css" rel="stylesheet">
     <link href="CSS/footer.css" rel="stylesheet">
 
-    <!-- Header 滾動效果 -->
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 全站動畫 -->
+    <script src="JS/animations.js" defer></script>
+
+    <!-- Header -->
     <script src="JS/header.js" defer></script>
 
     <!-- destination資料 -->
@@ -144,13 +153,13 @@
                     <span lang="en">AURORA&nbsp;SEASON&nbsp;2026</span>
                     <span>極光季預售中</span>
                 </p>
-                <h1 class="hero__title">
-                    追一場&nbsp;<span>極夜</span>
-                    <br>裡的綠色風暴
-                </h1>
                 <p class="hero__slogan">
                     CHASE THE AURORA
                 </p>
+                <h1 class="hero__title" data-animate="chars">
+                    追一場&nbsp;<span class="hero__title-highlight">極夜</span>
+                    <br>裡的綠色風暴
+                </h1>
                 <p class="hero__desc">
                     從冰島火山到芬蘭雪林，從挪威峽灣到瑞典拉普蘭。<br>
                     Aurora Travel 用 12 年的極地經驗，帶你走進一場一生一次的極光旅行。
@@ -228,7 +237,7 @@
             <div class="container">
 
                 <!-- 區塊標題 -->
-                <header class="destinations__header">
+                <header class="destinations__header" data-animate="fade-up">
                     <div class="destinations__heading">
                         <p class="section-header__eyebrow" lang="en">
                             EXPLORE THE NORTH
@@ -247,17 +256,15 @@
                 </header>
 
                 <!-- 國家切換 -->
-                <div class="filter-tabs destinations__tabs" aria-label="極光旅行目的地">
+                <div class="filter-tabs destinations__tabs" aria-label="極光旅行目的地" data-animate="fade-up">
 
-                    <button class="filter-tab is-active" type="button" aria-pressed="true"
-                        data-destination="iceland">
+                    <button class="filter-tab is-active" type="button" aria-pressed="true" data-destination="iceland">
 
                         <span class="filter-tab__zh">冰島</span>
                         <span class="filter-tab__en" lang="en">Iceland</span>
                     </button>
 
-                    <button class="filter-tab" type="button" aria-pressed="false"
-                        data-destination="finland">
+                    <button class="filter-tab" type="button" aria-pressed="false" data-destination="finland">
 
                         <span class="filter-tab__zh">芬蘭</span>
                         <span class="filter-tab__en" lang="en">Finland</span>
@@ -472,7 +479,7 @@
         <!-- Why Aurora -->
         <section class="why-aurora section-lg" id="about">
             <div class="container">
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         WHY AURORA
                     </p>
@@ -525,7 +532,7 @@
         <!-- Featured Tours 精華行程 -->
         <section class="featured-tours section-lg" id="featured-tours">
             <div class="container">
-                <header class="featured-tours__header">
+                <header class="featured-tours__header" data-animate="fade-up">
                     <div>
                         <p class="section-header__eyebrow" lang="en">
                             FEATURED TOURS
@@ -678,7 +685,7 @@
         <!-- Traveler Stories 旅客評價 -->
         <section class="traveler-stories section-lg">
             <div class="container traveler-stories__container">
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         TRAVELER STORIES
                     </p>
@@ -687,7 +694,7 @@
                         <span>是他們最常說的話</span>
                     </h2>
                 </header>
-                <div class="testimonial" aria-live="polite">
+                <div class="testimonial" aria-live="polite" data-animate="fade-up">
                     <div class="testimonial__rating">
                         <strong class="tour-card__rating-star" aria-hidden="true">★</strong>
                         <strong data-role="testimonial-rating">
@@ -712,7 +719,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-controls">
+                <div class="testimonial-controls" data-animate="fade-up">
                     <button class="icon-btn testimonial-controls__prev" type="button" aria-label="上一則旅客故事">
                         <i class="ti ti-arrow-left" aria-hidden="true"></i>
                     </button>
@@ -721,11 +728,9 @@
                         <button class="testimonial-dot is-active" type="button" aria-label="第 1 則旅客故事"
                             aria-current="true" data-index="0"></button>
 
-                        <button class="testimonial-dot" type="button" aria-label="第 2 則旅客故事"
-                            data-index="1"></button>
+                        <button class="testimonial-dot" type="button" aria-label="第 2 則旅客故事" data-index="1"></button>
 
-                        <button class="testimonial-dot" type="button" aria-label="第 3 則旅客故事"
-                            data-index="2"></button>
+                        <button class="testimonial-dot" type="button" aria-label="第 3 則旅客故事" data-index="2"></button>
                     </div>
                     <button class="icon-btn icon-btn--primary testimonial-controls__next" type="button"
                         aria-label="下一則旅客故事">

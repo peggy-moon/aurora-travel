@@ -291,6 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
             tourCount.textContent = tours.length;
         }
 
+        // 通知 animations.js：行程卡片已重新渲染
+        document.dispatchEvent(
+            new CustomEvent("tour-cards-rendered")
+        );
+
     }
 
     function matchesDays(tour, dayRange) {

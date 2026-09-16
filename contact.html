@@ -29,11 +29,20 @@
     <link href="CSS/footer.css" rel="stylesheet">
     <link href="CSS/contact.css" rel="stylesheet">
 
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <!-- 全站動畫 -->
+    <script src="JS/animations.js" defer></script>
+
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
 
-    <!-- Header 滾動效果 -->
+    <!-- Header -->
     <script src="JS/header.js" defer></script>
 
     <!-- 通用通知框 -->
@@ -361,7 +370,7 @@
         <section class="contact-visit section-lg">
             <div class="container">
 
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">VISIT US</p>
 
                     <h2 class="section-header__title">
@@ -447,7 +456,7 @@
         <section class="contact-cta section-lg">
             <div class="container">
 
-                <header class="section-header section-header--center">
+                <header class="section-header section-header--center" data-animate="fade-up">
                     <p class="section-header__eyebrow" lang="en">
                         READY TO EXPLORE
                     </p>
