@@ -485,8 +485,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // 更新瀏覽器分頁標題
-    document.title = `${tour.title}｜極光旅行 Aurora Travel`;
+    // 更新 SEO 資訊
+    document.title =
+        `${tour.title}｜極光旅行 Aurora Travel`;
+
+    const metaDescription =
+        document.querySelector(
+            'meta[name="description"]'
+        );
+
+    if (metaDescription) {
+        metaDescription.setAttribute(
+            "content",
+            tour.description
+        );
+    }
 
 
     renderHero(tour);

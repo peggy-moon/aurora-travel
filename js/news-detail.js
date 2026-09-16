@@ -138,6 +138,18 @@ function renderArticleHero() {
     document.title =
         `${currentArticle.title}｜極光旅行 Aurora Travel`;
 
+    const metaDescription =
+        document.querySelector(
+            'meta[name="description"]'
+        );
+
+    if (metaDescription) {
+        metaDescription.setAttribute(
+            "content",
+            currentArticle.description
+        );
+    }
+
 }
 
 /* Article Content */
