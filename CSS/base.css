@@ -28,6 +28,8 @@ body {
 
     color: var(--text-primary);
     background: var(--gradient-bg);
+
+    overflow-x: clip;
 }
 
 /* <figure>瀏覽器有預設margin會影響排版 */
