@@ -6,6 +6,8 @@ html {
 
     /* 滾動行為:平滑 */
     scroll-behavior: smooth;
+
+    overflow-x: clip;
 }
 
 *,
