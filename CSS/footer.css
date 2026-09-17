@@ -268,7 +268,8 @@
     .site-footer__watermark {
         right: auto;
         left: 0;
-
-        font-size: 28vw;
+    
+        max-width: 100%;
+        font-size: 16vw;
     }
 }
