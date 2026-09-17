@@ -10,6 +10,24 @@ const currentArticle =
             article.id === articleId
     );
 
+// Preload Hero Image 載入頁面先下載hero圖
+function preloadHeroImage(src) {
+
+    if (!src) return;
+
+    const preloadLink =
+        document.createElement("link");
+
+    preloadLink.rel = "preload";
+    preloadLink.as = "image";
+    preloadLink.href = src;
+    preloadLink.fetchPriority = "high";
+
+    document.head.appendChild(preloadLink);
+}
+
+preloadHeroImage(currentArticle.image);
+
 const relatedArticlesContainer =
     document.querySelector("#relatedArticles");
 
