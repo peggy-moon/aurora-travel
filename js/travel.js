@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${tour.reviews} 則評價
                             </p>
 
-                            <p class="travel-card__price">
+                            <p class="travel-card__price" translate="no">
                                 ${formatPrice(tour.price)}
                             </p>
                         </div>

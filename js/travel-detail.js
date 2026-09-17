@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                                 <p
                                     class="travel-gallery__caption-title"
-                                    lang="en">
+                                    lang="en" translate="no">
                                     ${image.title}
                                 </p>
                     
