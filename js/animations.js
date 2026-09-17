@@ -193,9 +193,9 @@ motion.add("(prefers-reduced-motion: no-preference)", () => {
             .from(".hero__title .char", {
                 y: 50,
                 opacity: 0,
-                duration: 0.7,
-                stagger: 0.055
-            })
+                duration: 0.65,
+                stagger: 0.04
+            }, "-=0.2")
             .from(".hero__slogan", {
                 y: 30,
                 opacity: 0,
