@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (bookingDescription) {
             bookingDescription.textContent =
-                `與我們的極光旅行策劃師聊聊，為你保留 ${tour.title} ${tour.days} 日的席位。名額有限，建議提前預訂。`;
+                `與我們的極光旅行策劃師聊聊，為你保留 ${tour.title} 日的席位。名額有限，建議提前預訂。`;
         }
 
         if (bookingMeetingPoint) {
